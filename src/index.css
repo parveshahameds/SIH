@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 min-h-screen antialiased selection:bg-indigo-500 selection:text-white;
+  }
+
+  /* Refined, Minimal Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090d16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer utilities {
+  /* Prestigious Institutional Glass & Surfaces */
+  .institutional-card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  }
+
+  .institutional-card-hover {
+    transition: all 0.25s ease-in-out;
+  }
+  .institutional-card-hover:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.35);
+  }
+
+  .subtle-border {
+    border: 1px solid rgba(51, 65, 85, 0.5);
+  }
+
+  .pillar-pill {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Subtle Telemetry Waveforms */
+  .waveform-bar {
+    animation: soundWave 1.2s ease-in-out infinite alternate;
+  }
+
+  /* Biometric Camera Viewport Scan Sweep */
+  .camera-sweep {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+    animation: cameraScan 2.4s ease-in-out infinite;
+  }
+
+  /* Radar Pulse for GPS Telemetry */
+  .radar-ring {
+    animation: radarPulse 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  }
+}
+
+@keyframes soundWave {
+  0% { height: 15%; }
+  50% { height: 95%; }
+  100% { height: 35%; }
+}
+
+@keyframes cameraScan {
+  0% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(190px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.3; }
+}
+
+@keyframes radarPulse {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
