@@ -30,9 +30,51 @@
 }
 
 @layer utilities {
-  /* Prestigious Institutional Glass & Surfaces */
+  /* Prestigious Institutional Glass & Cyber Surfaces */
+  .cyber-glass {
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .cyber-glass-hover {
+    transition: all 0.25s ease-in-out;
+  }
+  .cyber-glass-hover:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(6, 182, 212, 0.15);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.35);
+  }
+
+  .glow-indigo {
+    box-shadow: 0 0 25px -4px rgba(99, 102, 241, 0.35);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .institutional-card {
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(15, 23, 42, 0.82);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(51, 65, 85, 0.6);
@@ -44,7 +86,7 @@
   }
   .institutional-card-hover:hover {
     border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 30px -4px rgba(99, 102, 241, 0.2);
   }
 
   .subtle-border {

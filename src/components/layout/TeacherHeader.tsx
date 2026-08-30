@@ -27,19 +27,19 @@ export const TeacherHeader: React.FC<TeacherHeaderProps> = ({
   const [selectedBatch, setSelectedBatch] = useState(mockBatches[0].id);
 
   return (
-    <header className="sticky top-0 z-20 h-18 bg-white/90 backdrop-blur-md border-b border-slate-200/80 px-4 sm:px-8 flex items-center justify-between shadow-xs">
+    <header className="sticky top-0 z-20 h-18 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-8 flex items-center justify-between shadow-xs">
       {/* Left: Mobile trigger & Page Context */}
       <div className="flex items-center gap-3">
         <button
           onClick={onOpenMobileMenu}
-          className="md:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100"
+          className="md:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800"
           aria-label="Open educator navigation menu"
         >
           <Menu className="w-5 h-5" />
         </button>
 
         <div>
-          <h1 className="text-base sm:text-lg font-bold text-slate-900 capitalize font-sans">
+          <h1 className="text-base sm:text-lg font-bold text-white capitalize font-sans tracking-tight">
             {title || 'Educator Portal'}
           </h1>
           <p className="text-xs text-slate-400 hidden sm:block">
@@ -55,7 +55,7 @@ export const TeacherHeader: React.FC<TeacherHeaderProps> = ({
           <select
             value={selectedBatch}
             onChange={(e) => setSelectedBatch(e.target.value)}
-            className="appearance-none bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-8 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+            className="appearance-none bg-slate-950 border border-slate-800 rounded-xl pl-3 pr-8 py-1.5 text-xs font-semibold text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
           >
             {mockBatches.map((b) => (
               <option key={b.id} value={b.id}>
@@ -63,7 +63,7 @@ export const TeacherHeader: React.FC<TeacherHeaderProps> = ({
               </option>
             ))}
           </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-slate-400">
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-slate-500">
             <ChevronDown className="h-3.5 w-3.5" />
           </div>
         </div>
@@ -74,18 +74,18 @@ export const TeacherHeader: React.FC<TeacherHeaderProps> = ({
         {/* Quick Log Attendance Action */}
         <button
           onClick={() => onNavigate('attendance')}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200/80 text-xs font-semibold transition-all shadow-2xs group"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-indigo-950/80 hover:bg-indigo-900 text-indigo-300 border border-indigo-800/80 text-xs font-semibold transition-all shadow-2xs group"
         >
-          <CheckSquare className="w-4 h-4 text-indigo-600 group-hover:scale-110 transition-transform" />
+          <CheckSquare className="w-4 h-4 text-indigo-400 group-hover:scale-110 transition-transform" />
           <span className="hidden sm:inline">Log Attendance</span>
         </button>
 
         {/* AI Learning Gaps Alert Button */}
         <button
           onClick={() => onNavigate('learning-gaps')}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 text-xs font-semibold transition-all shadow-2xs"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/80 hover:bg-rose-900 text-rose-300 border border-rose-800/80 text-xs font-semibold transition-all shadow-2xs"
         >
-          <AlertOctagon className="w-4 h-4 text-rose-600 animate-pulse" />
+          <AlertOctagon className="w-4 h-4 text-rose-400 animate-pulse" />
           <span className="hidden sm:inline">Learning Gaps (3)</span>
         </button>
 
@@ -94,7 +94,7 @@ export const TeacherHeader: React.FC<TeacherHeaderProps> = ({
           <img
             src={teacherData.avatar}
             alt={teacherData.name}
-            className="w-8 h-8 rounded-xl object-cover ring-2 ring-indigo-200"
+            className="w-8 h-8 rounded-xl object-cover ring-2 ring-indigo-500/50"
           />
         </div>
       </div>

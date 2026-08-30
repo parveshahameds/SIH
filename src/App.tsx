@@ -8,7 +8,7 @@ import { TeacherLogin } from './pages/auth/TeacherLogin';
 import { StudentLayout } from './components/layout/StudentLayout';
 import { TeacherLayout } from './components/layout/TeacherLayout';
 
-// Student Pages (11 Routes including GD Arena)
+// Student Pages (11 Routes)
 import { StudentDashboard } from './pages/student/Dashboard';
 import { EdScroll } from './pages/student/EdScroll';
 import { AIAssistant } from './pages/student/AIAssistant';
@@ -32,37 +32,56 @@ import { TeacherCourses } from './pages/teacher/Courses';
 import { Assessments } from './pages/teacher/Assessments';
 import { Reports } from './pages/teacher/Reports';
 
-// Quick Role Switcher Toolbar Icons
-import { GraduationCap, Users, Home } from 'lucide-react';
+// Icons
+import { GraduationCap, Users, Home, Sparkles } from 'lucide-react';
+
+const getNormalizedRoute = (): string => {
+  // 1. First prioritize Hash (best for GitHub Pages: https://perrarish.github.io/SIH/#/student/dashboard)
+  const hash = window.location.hash.replace(/^#\/?/, '');
+  if (hash) {
+    return hash.startsWith('/') ? hash : `/${hash}`;
+  }
+
+  // 2. Fallback to pathname (strip base URL e.g. /SIH/)
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+  let path = window.location.pathname;
+  if (base && path.startsWith(base)) {
+    path = path.slice(base.length);
+  }
+  return path || '/';
+};
 
 const AppContent: React.FC = () => {
-  const [currentPath, setCurrentPath] = useState<string>(() => {
-    return window.location.pathname || '/';
-  });
-
+  const [currentPath, setCurrentPath] = useState<string>(getNormalizedRoute);
   const { loginAsStudent, loginAsTeacher, logout } = useAuth();
 
   useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+    const handleRouteChange = () => {
+      setCurrentPath(getNormalizedRoute());
     };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+    };
   }, []);
 
   const navigate = (path: string) => {
     let target = path;
     if (!target.startsWith('/')) {
-      if (currentPath.startsWith('/student/')) {
+      if (currentPath.startsWith('/student')) {
         target = `/student/${path}`;
-      } else if (currentPath.startsWith('/teacher/')) {
+      } else if (currentPath.startsWith('/teacher')) {
         target = `/teacher/${path}`;
       } else {
         target = `/${path}`;
       }
     }
 
-    window.history.pushState({}, '', target);
+    // Set hash so GitHub Pages and direct browser reloads always work seamlessly
+    window.location.hash = target;
     setCurrentPath(target);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -70,7 +89,7 @@ const AppContent: React.FC = () => {
   // Route Dispatcher
   const renderRoute = () => {
     // 1. Landing Page
-    if (currentPath === '/' || currentPath === '') {
+    if (currentPath === '/' || currentPath === '' || currentPath === '/landing') {
       return <LandingPage onNavigate={navigate} />;
     }
 
@@ -141,14 +160,16 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100">
+    <div className="relative min-h-screen font-sans">
       {renderRoute()}
 
-      {/* SIH Hackathon Jury Quick-Switch Floater */}
-      <div className="fixed bottom-4 right-4 z-50 hidden sm:flex items-center gap-1.5 p-1.5 rounded-2xl cyber-glass border border-slate-700 shadow-2xl text-xs font-semibold text-white animate-fade-in glow-cyan">
-        <span className="px-2 py-1 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
-          SIH Jury:
-        </span>
+      {/* Floating Demo Role Switcher Dock (Clean, Minimal, Non-Intrusive) */}
+      <div className="fixed bottom-4 right-4 z-50 flex items-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-2xl text-xs font-semibold text-white animate-fade-in">
+        <div className="flex items-center gap-1 pl-2 pr-1 text-[11px] text-slate-400 font-bold tracking-wide border-r border-slate-700">
+          <Sparkles className="w-3 h-3 text-cyan-400 animate-pulse" />
+          <span>Demo:</span>
+        </div>
+
         <button
           onClick={() => {
             loginAsStudent();
@@ -156,9 +177,10 @@ const AppContent: React.FC = () => {
           }}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all ${
             currentPath.startsWith('/student')
-              ? 'bg-gradient-to-r from-brand-600 to-cyan-600 text-white shadow-xs'
-              : 'hover:bg-slate-800 text-slate-300'
+              ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
+          title="Switch to Student Portal"
         >
           <GraduationCap className="w-3.5 h-3.5" />
           <span>Student</span>
@@ -171,12 +193,13 @@ const AppContent: React.FC = () => {
           }}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all ${
             currentPath.startsWith('/teacher')
-              ? 'bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-xs'
-              : 'hover:bg-slate-800 text-slate-300'
+              ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
+          title="Switch to Faculty Suite"
         >
           <Users className="w-3.5 h-3.5" />
-          <span>Teacher</span>
+          <span>Educator</span>
         </button>
 
         <button
@@ -184,14 +207,14 @@ const AppContent: React.FC = () => {
             logout();
             navigate('/');
           }}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition-all ${
-            currentPath === '/'
-              ? 'bg-slate-800 text-white shadow-xs'
-              : 'hover:bg-slate-800 text-slate-300'
+          className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl transition-all ${
+            currentPath === '/' || currentPath === '/landing'
+              ? 'bg-slate-800 text-white shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
+          title="Back to Landing Page"
         >
           <Home className="w-3.5 h-3.5" />
-          <span>Landing</span>
         </button>
       </div>
     </div>
