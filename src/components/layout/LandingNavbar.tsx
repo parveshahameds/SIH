@@ -24,7 +24,7 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onNavigate }) => {
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xl font-extrabold tracking-tight text-slate-900 font-sans">
-                  NCCT <span className="text-brand-600">CoLearn</span>
+                  NCCT <span className="text-brand-600">SahakarSetu</span>
                 </span>
                 <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-brand-50 text-brand-700 border border-brand-200/60 uppercase tracking-wide">
                   Govt. of India

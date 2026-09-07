@@ -239,7 +239,7 @@ export const TeacherLayout: React.FC<TeacherLayoutProps> = ({
 
       {/* Clean Minimal Institutional Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
-        <p>CoLearn Faculty Console • Outcome-Based Education (OBE) & NAAC/NBA Aligned</p>
+        <p>SahakarSetu Trainer & Institutional Admin Console • NCCT & Ministry of Cooperation</p>
       </footer>
     </div>
   );

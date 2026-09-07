@@ -48,7 +48,7 @@ export const TeacherLogin: React.FC<TeacherLoginProps> = ({ onNavigate }) => {
           className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 backdrop-blur-xs px-3.5 py-2 rounded-xl border border-slate-700 shadow-2xs transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to CoLearn Home</span>
+          <span>Back to SahakarSetu Home</span>
         </button>
       </div>
 

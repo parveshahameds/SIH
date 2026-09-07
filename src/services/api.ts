@@ -1,10 +1,10 @@
 /**
- * CoLearn Ecosystem API Service Client Blueprint
+ * SahakarSetu Ecosystem API Service Client Blueprint
  * 
  * This module acts as the unified contract for all backend service interactions:
  * - Authentication & Role authorization
  * - Course management & syllabus tracking
- * - AI Tutor conversational engine (LLM inference stream)
+ * - CoopMitra AI conversational engine (LLM inference stream)
  * - Attendance sync & IoT biometric/QR integration
  * - Learning gap diagnostics & automated remedial task generation
  * - Career placement readiness & skill passport ledger verification
@@ -43,9 +43,9 @@ import {
 } from '../data/mockData';
 
 // Configurable API Base URL
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.colearn.sih.internal/v1';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.sahakarsetu.gov.in/v1';
 
-export class CoLearnService {
+export class SahakarSetuService {
   // === AUTHENTICATION ===
   static async getStudentProfile(): Promise<StudentProfile> {
     // In production: return (await fetch(`${API_BASE_URL}/student/profile`)).json();

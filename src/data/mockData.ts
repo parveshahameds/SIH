@@ -596,7 +596,7 @@ export const mockStudentCourses: Course[] = [
     id: 'crs_dig_03',
     title: 'Cybersecurity, Phishing Defense & Cyber Hygiene for Rural Banks',
     code: 'DIG-603',
-    instructor: 'Dr. Rajesh Verma (CoLearn AI Systems)',
+    instructor: 'Dr. Rajesh Verma (NCCT Digital Systems)',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
     thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80',
     category: 'Digital',

@@ -1,4 +1,4 @@
-# CoLearn — AI-Enabled Training, Learning & Employment Ecosystem
+# SahakarSetu — NCCT Integrated Digital Cooperative Training & Employment Ecosystem
 
 [![Smart India Hackathon 2026](https://img.shields.io/badge/SIH-2026%20Initiative-indigo.svg)](https://sih.gov.in/)
 [![React 18](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
@@ -6,13 +6,13 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8.svg)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-646cff.svg)](https://vitejs.dev/)
 
-**CoLearn** is an AI-powered education and career ecosystem aligned with **National Education Policy (NEP 2020)**. It seamlessly bridges classroom curricula, micro-learning, automated educator gap diagnostics, and verifiable employment pathways.
+**SahakarSetu** is an AI-powered digital cooperative training, learning, and employment ecosystem developed for the **National Council for Cooperative Training (NCCT)** under the **Ministry of Cooperation, Government of India**. It seamlessly bridges institutional training (VAMNICOM, RICMs, ICMs), touchless facial biometric attendance, 7-sector cooperative learning, automated AI learning-gap diagnostics, verifiable skill passports, and direct cooperative job placements (PACS, Dairy Unions, DCCBs).
 
 ---
 
 ## 🌟 Key Architecture & Experience Overview
 
-CoLearn features completely distinct, fully scaffolded experiences for **Students** and **Educators/Faculty**, built on top of a shared modern design system and realistic domain mock dataset.
+SahakarSetu features completely distinct, fully scaffolded experiences for **Trainees / Students**, **Trainers / Faculty**, and **NCCT Institutional Administrators**.
 
 ### 🎓 Student Ecosystem (10 Dedicated Routes)
 1. **Dashboard (`/student/dashboard`)**: Daily AI recommendations, continue learning progress, streak tracker (🔥 14 Days), and today's timetable strip.

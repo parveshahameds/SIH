@@ -236,7 +236,7 @@ export const CareerLab: React.FC<CareerLabProps> = ({ onNavigate }) => {
                   size="sm"
                   onClick={(e) => {
                     e.stopPropagation();
-                    alert(`Application submitted to ${job.company} via CoLearn Skill Passport!`);
+                    alert(`Application submitted to ${job.company} via SahakarSetu Skill Passport!`);
                   }}
                   className="text-xs bg-indigo-600 hover:bg-indigo-500 text-white"
                 >

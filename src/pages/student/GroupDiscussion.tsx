@@ -137,7 +137,7 @@ export const GroupDiscussion: React.FC<GroupDiscussionProps> = ({ onNavigate }) 
         },
         {
           id: 'p_mod',
-          name: 'CoLearn AI Moderator',
+          name: 'SahakarSetu AI Moderator',
           avatar: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop&q=80',
           role: 'moderator',
           isSpeaking: false,
@@ -149,7 +149,7 @@ export const GroupDiscussion: React.FC<GroupDiscussionProps> = ({ onNavigate }) 
         {
           id: 'm_init',
           participantId: 'p_mod',
-          participantName: 'CoLearn AI Moderator',
+          participantName: 'SahakarSetu AI Moderator',
           text: `Discussion room initialized on "${newTopic}". Participants may request the floor to begin.`,
           timestamp: 'Just now',
           type: 'ai-prompt'

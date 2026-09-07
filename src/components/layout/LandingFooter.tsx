@@ -12,10 +12,10 @@ export const LandingFooter: React.FC = () => {
               <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-sky-400 flex items-center justify-center text-white shadow-md">
                 <Sparkles className="w-5 h-5" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">CoLearn</span>
+              <span className="text-xl font-bold text-white tracking-tight">SahakarSetu</span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              An intelligent, NEP-2020 aligned platform uniting micro-learning, automated educator gap diagnostics, verifiable skill passports, and career placement readiness.
+              An intelligent, NCCT & NEP-2020 aligned platform uniting cooperative training, touchless biometric attendance, AI topic gap diagnostics, verifiable skill passports, and employment pathways under the Ministry of Cooperation.
             </p>
             <div className="flex items-center gap-2 text-xs text-emerald-400">
               <Shield className="w-3.5 h-3.5" />
@@ -30,10 +30,10 @@ export const LandingFooter: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li><a href="#features" className="hover:text-white transition-colors">EdScroll Micro-Feed</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Conversational AI Tutor</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">CoopMitra AI Advisor</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Verifiable Skill Passport</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">AI Career Lab & Resume Scorer</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Dynamic Attendance & Timetable</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Cooperative Job Matching</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Touchless Face Attendance</a></li>
             </ul>
           </div>
 
@@ -62,7 +62,7 @@ export const LandingFooter: React.FC = () => {
             <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs space-y-1.5">
               <div className="flex items-center gap-2 text-brand-300 font-semibold">
                 <Award className="w-4 h-4" />
-                <span>NEP 2020 Credit Framework</span>
+                <span>NCCT & NCrF Credit Framework</span>
               </div>
               <p className="text-[11px] text-slate-400">
                 Supports Academic Bank of Credits (ABC) integration & continuous skill telemetry.
@@ -72,7 +72,7 @@ export const LandingFooter: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© 2026 CoLearn Ecosystem. Smart India Hackathon Prototype.</p>
+          <p>© 2026 SahakarSetu Ecosystem. Smart India Hackathon Prototype.</p>
           <div className="flex items-center gap-6">
             <span className="hover:text-slate-400 cursor-pointer">Privacy Framework</span>
             <span className="hover:text-slate-400 cursor-pointer">Terms of Service</span>

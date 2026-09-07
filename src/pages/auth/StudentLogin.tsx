@@ -48,7 +48,7 @@ export const StudentLogin: React.FC<StudentLoginProps> = ({ onNavigate }) => {
           className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-brand-600 bg-white/80 backdrop-blur-xs px-3.5 py-2 rounded-xl border border-slate-200 shadow-2xs transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to CoLearn Home</span>
+          <span>Back to SahakarSetu Home</span>
         </button>
       </div>
 
@@ -59,10 +59,10 @@ export const StudentLogin: React.FC<StudentLoginProps> = ({ onNavigate }) => {
           </div>
         </div>
         <h2 className="mt-4 text-center text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-sans">
-          Student Portal Sign In
+          Trainee & Student Sign In
         </h2>
         <p className="mt-1.5 text-center text-xs sm:text-sm text-slate-500">
-          Access your courses, EdScroll micro-feed, and AI tutor
+          Access your NCCT cooperative courses, EdScroll micro-feed, and CoopMitra AI
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export const StudentLogin: React.FC<StudentLoginProps> = ({ onNavigate }) => {
               icon={Mail}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="e.g. ananya.s@colearn.edu.in"
+              placeholder="e.g. ananya.s@sahakarsetu.gov.in"
               required
             />
 

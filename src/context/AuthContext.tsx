@@ -18,7 +18,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const AUTH_STORAGE_KEY = 'colearn_auth_state_v1';
+const AUTH_STORAGE_KEY = 'sahakarsetu_auth_state_v1';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [studentData, setStudentData] = useState<StudentProfile>(() => {

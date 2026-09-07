@@ -248,7 +248,7 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
 
       {/* Clean Minimal Institutional Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
-        <p>CoLearn Ecosystem • Academic Bank of Credits (ABC) & NEP 2020 Compliant</p>
+        <p>SahakarSetu Ecosystem • NCCT & NCrF Credit Framework • Ministry of Cooperation</p>
       </footer>
     </div>
   );
