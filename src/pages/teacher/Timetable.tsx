@@ -75,12 +75,12 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
   };
 
   return (
-    <div className="space-y-6 animate-fade-in text-slate-100">
+    <div className="space-y-6 animate-fade-in text-slate-900 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
-          <h2 className="text-xl font-extrabold text-white">Master Teaching Schedule & Conflict Detection</h2>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <h2 className="text-xl font-extrabold text-slate-900">Master Teaching Schedule & Conflict Detection</h2>
+          <p className="text-xs text-slate-500 mt-0.5">
             Manage class allocations, book laboratory hours, and prevent classroom double-booking
           </p>
         </div>
@@ -90,19 +90,19 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
             variant="outline"
             size="sm"
             onClick={() => alert('Exporting full master timetable to PDF...')}
-            className="text-xs bg-slate-900 border-slate-800 text-slate-300"
+            className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
           >
             Export Schedule
           </Button>
           <Button
-            variant="glow"
+            variant="primary"
             size="sm"
             icon={Plus}
             onClick={() => {
               setConflictWarning(null);
               setScheduleModalOpen(true);
             }}
-            className="text-xs font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 shadow-md shadow-cyan-500/25"
+            className="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs"
           >
             Schedule Class Slot
           </Button>
@@ -117,8 +117,8 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
             onClick={() => setSelectedDay(day)}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
               selectedDay === day
-                ? 'bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-md shadow-cyan-500/20'
-                : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-white'
+                ? 'bg-indigo-600 text-white shadow-xs'
+                : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
             }`}
           >
             {day}
@@ -129,9 +129,9 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
       {/* Schedule Cards */}
       <div className="space-y-4">
         {slotsForDay.length === 0 ? (
-          <Card variant="default" padding="lg" className="cyber-glass border-slate-800 text-center py-12">
-            <CalendarIcon className="w-10 h-10 text-slate-600 mx-auto mb-2" />
-            <p className="text-sm font-semibold text-slate-300">No scheduled sessions for {selectedDay}</p>
+          <Card variant="default" padding="lg" className="bg-white border-slate-200/90 text-center py-12 shadow-xs">
+            <CalendarIcon className="w-10 h-10 text-slate-400 mx-auto mb-2" />
+            <p className="text-sm font-semibold text-slate-700">No scheduled sessions for {selectedDay}</p>
           </Card>
         ) : (
           slotsForDay.map((slot) => (
@@ -139,24 +139,24 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
               key={slot.id}
               variant={slot.isLiveNow ? 'elevated' : 'default'}
               padding="md"
-              className={`cyber-glass border-slate-800 transition-all ${
-                slot.isLiveNow ? 'ring-2 ring-cyan-500 glow-cyan' : ''
+              className={`bg-white border-slate-200/90 shadow-xs transition-all ${
+                slot.isLiveNow ? 'ring-2 ring-indigo-500 border-indigo-300' : ''
               }`}
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-cyan-400 text-center min-w-[90px] shrink-0 font-mono">
-                    <Clock className="w-4 h-4 mx-auto text-cyan-400 mb-1" />
+                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-indigo-700 text-center min-w-[90px] shrink-0 font-mono">
+                    <Clock className="w-4 h-4 mx-auto text-indigo-600 mb-1" />
                     <p className="text-xs font-bold">{slot.startTime}</p>
                     <p className="text-[10px] text-slate-500">{slot.endTime}</p>
                   </div>
 
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-800 text-cyan-300 font-mono">
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-indigo-700 font-mono">
                         {slot.code}
                       </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white">
+                      <h4 className="text-sm sm:text-base font-bold text-slate-900">
                         {slot.subject}
                       </h4>
                       <Badge variant={slot.type === 'Lab' ? 'purple' : 'brand'} size="sm">
@@ -164,9 +164,9 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
                       </Badge>
                     </div>
 
-                    <div className="flex items-center gap-4 text-xs text-slate-400">
+                    <div className="flex items-center gap-4 text-xs text-slate-500">
                       <span className="flex items-center gap-1">
-                        <Users className="w-3.5 h-3.5 text-cyan-400" />
+                        <Users className="w-3.5 h-3.5 text-indigo-600" />
                         Batch: {slot.batch}
                       </span>
                       <span className="flex items-center gap-1">
@@ -182,17 +182,17 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
                     variant="outline"
                     size="sm"
                     onClick={() => onNavigate('attendance')}
-                    className="text-xs bg-slate-900 border-slate-800 text-slate-300 hover:text-white"
+                    className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
                   >
                     Manage Attendance
                   </Button>
                   {slot.isLiveNow && (
                     <Button
-                      variant="glow"
+                      variant="primary"
                       size="sm"
                       icon={Play}
                       onClick={() => alert('Starting live faculty lecture session in Lab 402...')}
-                      className="text-xs font-bold"
+                      className="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white"
                     >
                       Start Session
                     </Button>
@@ -216,16 +216,16 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
               <Button variant="outline" size="sm" onClick={() => setScheduleModalOpen(false)}>
                 Cancel
               </Button>
-              <Button variant="glow" size="sm" onClick={handleScheduleSlot}>
+              <Button variant="primary" size="sm" onClick={handleScheduleSlot} className="bg-indigo-600 text-white hover:bg-indigo-500">
                 Confirm & Book Slot
               </Button>
             </div>
           }
         >
-          <form onSubmit={handleScheduleSlot} className="space-y-4 text-slate-100">
+          <form onSubmit={handleScheduleSlot} className="space-y-4 text-slate-900">
             {conflictWarning && (
-              <div className="p-3.5 rounded-2xl bg-rose-950/80 border border-rose-600 text-xs text-rose-200 flex items-start gap-2 animate-fade-in">
-                <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+              <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-start gap-2 animate-fade-in">
+                <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
                 <span>{conflictWarning}</span>
               </div>
             )}
@@ -254,13 +254,13 @@ export const TeacherTimetable: React.FC<TeacherTimetableProps> = ({ onNavigate }
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wider">
                 Laboratory / Classroom
               </label>
               <select
                 value={newClassroom}
                 onChange={(e) => setNewClassroom(e.target.value)}
-                className="w-full rounded-xl border border-slate-800 bg-slate-900 p-2.5 text-xs text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-300 bg-slate-50 p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               >
                 <option value="Lab 402 (NVIDIA AI Center)">Lab 402 (NVIDIA AI Center)</option>
                 <option value="LH-301">LH-301 (Auditorium Hall)</option>

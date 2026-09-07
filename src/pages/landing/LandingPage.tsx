@@ -47,20 +47,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200/80 text-brand-700 text-xs font-semibold shadow-xs animate-fade-in">
               <Sparkles className="w-3.5 h-3.5 text-brand-600 animate-pulse" />
-              <span>Smart India Hackathon 2026 Initiative</span>
+              <span>National Council for Cooperative Training (NCCT)</span>
               <span className="w-1 h-1 rounded-full bg-brand-400" />
-              <span className="text-brand-900 font-bold">NEP 2020 Aligned</span>
+              <span className="text-brand-900 font-bold">Ministry of Cooperation, Govt. of India</span>
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-              The AI-Enabled Learning, Mentorship &{' '}
+              Integrated Digital Cooperative Training &{' '}
               <span className="text-gradient">Employment Ecosystem</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Bridging classroom education and real-world employment with bite-sized vertical EdScroll learning, conversational 24/7 AI tutoring, automated teacher gap diagnostics, and verifiable skill passports.
+              Empowering VAMNICOM, RICMs, ICMs, PACS personnel, SHGs, dairy federations, and rural youth across 7 core sectors: <strong>Cooperative, Finance, Agriculture, Dairy, Entrepreneurship, Digital & Employability</strong> with Touchless Facial Attendance, Smart ERP, AI Learning-Gap Engine, and Verifiable Skill Passports.
             </p>
 
             {/* CTA Buttons */}
@@ -315,8 +315,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
                 {/* Interactive Quiz Mini Card */}
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 space-y-2.5">
-                  <p className="text-xs font-semibold text-brand-300">
-                    ⚡ Quick Check: For 4,000 tokens, what is the attention matrix size?
+                  <p className="text-xs font-semibold text-cyan-300">
+                    Quick Check: For 4,000 tokens, what is the attention matrix size?
                   </p>
                   <div className="grid grid-cols-2 gap-2">
                     {['4,000 elements', '16 Million elements', '8,000 elements', '64,000 elements'].map((opt, idx) => (
@@ -336,10 +336,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     ))}
                   </div>
                   {activeQuizSelected !== null && (
-                    <p className="text-[10px] text-emerald-400 font-medium animate-fade-in pt-1">
+                    <p className={`text-[10px] font-medium animate-fade-in pt-1 ${
+                      activeQuizSelected === 1 ? 'text-emerald-400' : 'text-rose-400'
+                    }`}>
                       {activeQuizSelected === 1
-                        ? '✓ Correct! 4,000 x 4,000 = 16M matrix elements.'
-                        : '❌ Incorrect. N x N = 4,000 x 4,000 = 16,000,000.'}
+                        ? 'Correct: 4,000 x 4,000 = 16M matrix elements.'
+                        : 'Incorrect: N x N = 4,000 x 4,000 = 16,000,000.'}
                     </p>
                   )}
                 </div>

@@ -27,7 +27,7 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
   const [createModalOpen, setCreateModalOpen] = useState(false);
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in text-slate-900 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
@@ -38,11 +38,11 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
         </div>
 
         <Button
-          variant="glow"
+          variant="primary"
           size="sm"
           icon={Sparkles}
           onClick={() => setCreateModalOpen(true)}
-          className="text-xs"
+          className="text-xs bg-indigo-600 hover:bg-indigo-500 text-white"
         >
           AI Assessment Generator
         </Button>
@@ -55,7 +55,7 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
             key={item.id}
             variant="elevated"
             padding="lg"
-            className="border-slate-200/80 space-y-4"
+            className="border-slate-200/90 bg-white space-y-4 shadow-xs"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
@@ -73,8 +73,8 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
                   >
                     {item.status.toUpperCase()}
                   </Badge>
-                  <span className="text-xs font-bold text-slate-700">{item.batch}</span>
-                  <span className="text-xs text-slate-400">• {item.subject}</span>
+                  <span className="text-xs font-bold text-slate-800">{item.batch}</span>
+                  <span className="text-xs text-slate-500">• {item.subject}</span>
                 </div>
 
                 <h3 className="text-base font-bold text-slate-900">{item.title}</h3>
@@ -84,17 +84,17 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100 text-center min-w-[120px]">
-                  <p className="text-[10px] uppercase font-bold text-slate-400">Submissions</p>
-                  <p className="text-base font-extrabold text-slate-900">
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center min-w-[120px]">
+                  <p className="text-[10px] uppercase font-bold text-slate-500">Submissions</p>
+                  <p className="text-base font-extrabold text-slate-900 font-mono">
                     {item.submissionsCount} / {item.totalStudents}
                   </p>
                 </div>
 
                 {item.averageScorePercentage > 0 && (
-                  <div className="p-3 rounded-2xl bg-indigo-50 border border-indigo-100 text-center min-w-[120px]">
+                  <div className="p-3 rounded-2xl bg-indigo-50 border border-indigo-200 text-center min-w-[120px]">
                     <p className="text-[10px] uppercase font-bold text-indigo-700">Average Score</p>
-                    <p className="text-base font-extrabold text-indigo-600">
+                    <p className="text-base font-extrabold text-indigo-900 font-mono">
                       {item.averageScorePercentage}%
                     </p>
                   </div>
@@ -103,13 +103,13 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-400">Auto-grading telemetry synchronized</span>
+              <span className="text-slate-500">Auto-grading telemetry synchronized</span>
               <div className="flex gap-2">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => alert('Viewing student submission gradesheet...')}
-                  className="text-xs"
+                  className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
                 >
                   View Gradesheet
                 </Button>
@@ -117,7 +117,7 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
                   variant="primary"
                   size="sm"
                   onClick={() => alert('Publishing finalized grades to student Skill Passports...')}
-                  className="text-xs"
+                  className="text-xs bg-indigo-600 hover:bg-indigo-500 text-white"
                 >
                   Publish Grades
                 </Button>
@@ -139,24 +139,25 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
               Cancel
             </Button>
             <Button
-              variant="glow"
+              variant="primary"
               size="sm"
               onClick={() => {
                 alert('AI generated 15 questions and published quiz!');
                 setCreateModalOpen(false);
               }}
+              className="bg-indigo-600 hover:bg-indigo-500 text-white"
             >
               Generate & Schedule Quiz
             </Button>
           </div>
         }
       >
-        <div className="space-y-4">
-          <Input label="Assessment Title" placeholder="e.g. Diagnostic Quiz: Transformer Attention Matrices" />
-          <Input label="Target Batch" placeholder="e.g. CSE-A (Semester 6)" />
+        <div className="space-y-4 text-xs text-slate-800">
+          <Input label="Assessment Title" placeholder="e.g. Diagnostic Quiz: Transformer Attention Matrices" className="bg-slate-50 border-slate-300 text-slate-900" />
+          <Input label="Target Batch" placeholder="e.g. CSE-A (Semester 6)" className="bg-slate-50 border-slate-300 text-slate-900" />
           <div className="grid grid-cols-2 gap-4">
-            <Input label="Number of Questions" type="number" defaultValue={10} />
-            <Input label="Duration (Minutes)" type="number" defaultValue={30} />
+            <Input label="Number of Questions" type="number" defaultValue={10} className="bg-slate-50 border-slate-300 text-slate-900" />
+            <Input label="Duration (Minutes)" type="number" defaultValue={30} className="bg-slate-50 border-slate-300 text-slate-900" />
           </div>
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wider">
@@ -165,7 +166,7 @@ export const Assessments: React.FC<AssessmentsProps> = ({ onNavigate }) => {
             <textarea
               rows={2}
               defaultValue="Attention Head Projections, Softmax Normalization, Residual Addition"
-              className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="w-full rounded-xl border border-slate-300 bg-slate-50 p-2.5 text-xs text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             />
           </div>
         </div>

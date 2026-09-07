@@ -12,7 +12,10 @@ import {
   LayoutDashboard,
   LogOut,
   Bell,
-  Sparkles
+  Sparkles,
+  Compass,
+  ClipboardList,
+  Building2
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -34,13 +37,13 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
     if (currentRoute === 'dashboard') {
       return 'dashboard';
     }
-    if (['attendance', 'timetable'].includes(currentRoute)) {
+    if (['attendance', 'timetable', 'registration', 'hostel'].includes(currentRoute)) {
       return 'college';
     }
     if (['ai-assistant'].includes(currentRoute)) {
       return 'ai';
     }
-    return 'learning'; // edscroll, my-learning, gd, career-lab, skill-passport, notifications, profile
+    return 'learning'; // edscroll, my-learning, jobs, gd, career-lab, skill-passport, notifications, profile
   };
 
   const activePillar = getActivePillar();
@@ -48,15 +51,18 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
   // Pillar Sub-Navigation items
   const collegeSubItems = [
     { id: 'attendance', label: 'Attendance & Smart Check-in', icon: Clock, badge: 'Active Token' },
-    { id: 'timetable', label: 'Schedule & Timetable', icon: Calendar, badge: 'Live Today' }
+    { id: 'timetable', label: 'Schedule & Timetable', icon: Calendar },
+    { id: 'registration', label: 'Programme Registration', icon: ClipboardList, badge: 'NEP 2020' },
+    { id: 'hostel', label: 'Hostel & Logistics', icon: Building2 }
   ];
 
   const learningSubItems = [
     { id: 'edscroll', label: 'EdScroll Micro-Feed', icon: Smartphone, badge: 'Reels & Quizzes' },
     { id: 'my-learning', label: 'My Courses & Syllabus', icon: BookOpen },
+    { id: 'jobs', label: 'Jobs & Internships', icon: Compass, badge: 'Career' },
     { id: 'gd', label: 'GD Arena (Debates)', icon: Users, badge: 'Live Room' },
     { id: 'career-lab', label: 'AI Career Lab & Interviews', icon: Briefcase },
-    { id: 'skill-passport', label: 'Skill Passport & Credits', icon: Award, badge: 'NEP 2020' }
+    { id: 'skill-passport', label: 'Skill Passport & Credits', icon: Award }
   ];
 
   const aiSubItems = [
@@ -71,16 +77,17 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
       : activePillar === 'dashboard'
       ? [
           { id: 'dashboard', label: 'Overview', icon: LayoutDashboard },
-          { id: 'edscroll', label: 'EdScroll', icon: Smartphone },
+          { id: 'jobs', label: 'Jobs & Internships', icon: Compass },
           { id: 'attendance', label: 'Attendance', icon: Clock },
+          { id: 'edscroll', label: 'EdScroll', icon: Smartphone },
           { id: 'ai-assistant', label: 'AI Tutor', icon: Bot },
         ]
       : learningSubItems;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
       {/* Top Universal Navbar */}
-      <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-xl border-b border-slate-800/80 shadow-md shadow-black/20">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between gap-4">
             {/* Left: Brand Identity & Quick Dashboard */}
@@ -94,10 +101,10 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="font-extrabold text-base tracking-tight text-white">
-                    Co<span className="text-indigo-400">Learn</span>
+                  <span className="font-extrabold text-base tracking-tight text-slate-900">
+                    Co<span className="text-indigo-600">Learn</span>
                   </span>
-                  <span className="hidden sm:inline-block ml-2 px-2 py-0.5 text-[10px] font-bold bg-indigo-950/80 text-indigo-300 rounded-md border border-indigo-800/60 uppercase">
+                  <span className="hidden sm:inline-block ml-2 px-2 py-0.5 text-[10px] font-bold bg-indigo-50 text-indigo-700 rounded-md border border-indigo-200 uppercase">
                     Student
                   </span>
                 </div>
@@ -108,8 +115,8 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
                 onClick={() => onNavigate('dashboard')}
                 className={`hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
                   currentRoute === 'dashboard'
-                    ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/40'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
+                    ? 'bg-indigo-50 text-indigo-700 border border-indigo-200 shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
                 <LayoutDashboard className="w-3.5 h-3.5" />
@@ -117,17 +124,17 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
               </button>
             </div>
 
-            {/* Center: The 3 Core Pillars Segment Controller (Simple & Elegant) */}
+            {/* Center: The 3 Core Pillars Segment Controller */}
             <nav
               aria-label="Core Pillars"
-              className="flex items-center p-1 bg-slate-950/90 rounded-2xl border border-slate-800/90 shadow-inner"
+              className="flex items-center p-1 bg-slate-100 rounded-2xl border border-slate-200 shadow-xs"
             >
               <button
                 onClick={() => onNavigate('attendance')}
                 className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all duration-200 ${
                   activePillar === 'college'
-                    ? 'bg-gradient-to-r from-indigo-600 to-brand-600 text-white shadow-md shadow-indigo-500/25'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-slate-900/60'
+                    ? 'bg-indigo-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/70'
                 }`}
               >
                 <Clock className="w-3.5 h-3.5" />
@@ -138,8 +145,8 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
                 onClick={() => onNavigate('edscroll')}
                 className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all duration-200 ${
                   activePillar === 'learning'
-                    ? 'bg-gradient-to-r from-indigo-600 to-brand-600 text-white shadow-md shadow-indigo-500/25'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-slate-900/60'
+                    ? 'bg-indigo-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/70'
                 }`}
               >
                 <BookOpen className="w-3.5 h-3.5" />
@@ -150,8 +157,8 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
                 onClick={() => onNavigate('ai-assistant')}
                 className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all duration-200 ${
                   activePillar === 'ai'
-                    ? 'bg-gradient-to-r from-indigo-600 to-brand-600 text-white shadow-md shadow-indigo-500/25'
-                    : 'text-slate-400 hover:text-slate-100 hover:bg-slate-900/60'
+                    ? 'bg-indigo-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/70'
                 }`}
               >
                 <Bot className="w-3.5 h-3.5" />
@@ -163,35 +170,35 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
             <div className="flex items-center gap-2.5 sm:gap-3">
               <button
                 onClick={() => onNavigate('notifications')}
-                className="relative p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors"
+                className="relative p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
                 title="Notifications"
               >
                 <Bell className="w-4 h-4" />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-slate-900" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white" />
               </button>
 
               <div
                 onClick={() => onNavigate('profile')}
-                className="flex items-center gap-2 cursor-pointer p-1 rounded-xl hover:bg-slate-800/60 transition-all group"
+                className="flex items-center gap-2 cursor-pointer p-1 rounded-xl hover:bg-slate-100 transition-all group"
                 title="View Profile"
               >
                 <img
                   src={studentData.avatar}
                   alt={studentData.name}
-                  className="w-8 h-8 rounded-lg object-cover ring-1 ring-slate-700 group-hover:ring-indigo-500 transition-all"
+                  className="w-8 h-8 rounded-lg object-cover ring-1 ring-slate-300 group-hover:ring-indigo-500 transition-all"
                 />
                 <div className="hidden lg:block text-left text-xs">
-                  <p className="font-bold text-white leading-tight group-hover:text-indigo-300 transition-colors">
+                  <p className="font-bold text-slate-900 leading-tight group-hover:text-indigo-600 transition-colors">
                     {studentData.name}
                   </p>
-                  <p className="text-[10px] text-slate-400 font-mono">Roll: {studentData.rollNumber}</p>
+                  <p className="text-[10px] text-slate-500 font-mono">Roll: {studentData.rollNumber}</p>
                 </div>
               </div>
 
               <button
                 onClick={logout}
                 title="Log out"
-                className="p-2 text-slate-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-xl transition-colors"
+                className="p-2 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
               >
                 <LogOut className="w-4 h-4" />
               </button>
@@ -199,8 +206,8 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
           </div>
         </div>
 
-        {/* Secondary Sub-Pillar Tab Strip (Elegant & Clean) */}
-        <div className="bg-slate-950/90 border-t border-slate-800/70 backdrop-blur-md">
+        {/* Secondary Sub-Pillar Tab Strip */}
+        <div className="bg-white/90 border-t border-slate-200/90 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between overflow-x-auto py-2.5 gap-4 no-scrollbar">
               {/* Sub-Pillar Tabs */}
@@ -214,46 +221,20 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
                       onClick={() => onNavigate(item.id)}
                       className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                         isCurrent
-                          ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/40 shadow-xs'
-                          : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80 border border-transparent'
+                          ? 'bg-indigo-50 text-indigo-700 border border-indigo-200 shadow-xs'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
                       }`}
                     >
-                      <Icon className={`w-3.5 h-3.5 ${isCurrent ? 'text-indigo-400' : 'text-slate-400'}`} />
+                      <Icon className={`w-3.5 h-3.5 ${isCurrent ? 'text-indigo-600' : 'text-slate-500'}`} />
                       <span>{item.label}</span>
                       {item.badge && (
-                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-slate-800/80 text-slate-300 border border-slate-700/60">
+                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200">
                           {item.badge}
                         </span>
                       )}
                     </button>
                   );
                 })}
-              </div>
-
-              {/* Student Strategic Inquiries (Quick Inquiries Anchors) */}
-              <div className="hidden xl:flex items-center gap-2 text-xs text-slate-400 shrink-0">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-indigo-400" />
-                  Quick Actions:
-                </span>
-                <button
-                  onClick={() => onNavigate('timetable')}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-[11px] text-slate-300 transition-colors"
-                >
-                  📅 Today's Schedule
-                </button>
-                <button
-                  onClick={() => onNavigate('edscroll')}
-                  className="px-2.5 py-1 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-[11px] text-slate-300 transition-colors"
-                >
-                  🎯 Next Lesson
-                </button>
-                <button
-                  onClick={() => onNavigate('ai-assistant')}
-                  className="px-2.5 py-1 rounded-lg bg-indigo-950/60 hover:bg-indigo-900/80 border border-indigo-800/60 text-[11px] text-indigo-300 transition-colors"
-                >
-                  💡 Ask AI Tutor
-                </button>
               </div>
             </div>
           </div>
@@ -266,7 +247,7 @@ export const StudentLayout: React.FC<StudentLayoutProps> = ({
       </main>
 
       {/* Clean Minimal Institutional Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-6 text-center text-xs text-slate-500">
+      <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
         <p>CoLearn Ecosystem • Academic Bank of Credits (ABC) & NEP 2020 Compliant</p>
       </footer>
     </div>

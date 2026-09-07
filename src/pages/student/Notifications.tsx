@@ -42,7 +42,7 @@ export const Notifications: React.FC<NotificationsProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="space-y-6 max-w-4xl mx-auto animate-fade-in">
+    <div className="space-y-6 max-w-4xl mx-auto animate-fade-in text-slate-900">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
@@ -57,22 +57,22 @@ export const Notifications: React.FC<NotificationsProps> = ({ onNavigate }) => {
           size="sm"
           icon={CheckCheck}
           onClick={markAllRead}
-          className="text-xs"
+          className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
         >
           Mark All as Read
         </Button>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
         {['all', 'academic', 'ai-alert', 'career', 'system'].map((type) => (
           <button
             key={type}
             onClick={() => setFilterType(type)}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all ${
               filterType === type
-                ? 'bg-brand-600 text-white shadow-2xs'
-                : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
+                ? 'bg-indigo-600 text-white shadow-xs'
+                : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
             }`}
           >
             {type.replace('-', ' ')}
@@ -83,8 +83,8 @@ export const Notifications: React.FC<NotificationsProps> = ({ onNavigate }) => {
       {/* Notifications List */}
       <div className="space-y-3">
         {filteredItems.length === 0 ? (
-          <Card variant="default" padding="lg" className="text-center py-12">
-            <Bell className="w-10 h-10 text-slate-300 mx-auto mb-2" />
+          <Card variant="default" padding="lg" className="text-center py-12 border-slate-200/90 bg-white shadow-xs">
+            <Bell className="w-10 h-10 text-slate-400 mx-auto mb-2" />
             <p className="text-sm font-semibold text-slate-700">No notifications in this category</p>
           </Card>
         ) : (
@@ -93,13 +93,13 @@ export const Notifications: React.FC<NotificationsProps> = ({ onNavigate }) => {
               key={item.id}
               variant="default"
               padding="md"
-              className={`border-slate-200/80 transition-all ${
-                !item.isRead ? 'bg-brand-50/20 border-l-4 border-l-brand-600' : ''
+              className={`border-slate-200/90 bg-white shadow-xs transition-all ${
+                !item.isRead ? 'bg-indigo-50/40 border-l-4 border-l-indigo-600' : ''
               }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-start gap-3">
-                  <div className="p-2.5 rounded-xl bg-slate-100 shrink-0">
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 shrink-0">
                     {getIcon(item.type)}
                   </div>
 
@@ -122,7 +122,7 @@ export const Notifications: React.FC<NotificationsProps> = ({ onNavigate }) => {
                     <p className="text-xs text-slate-600 leading-relaxed">
                       {item.message}
                     </p>
-                    <p className="text-[10px] text-slate-400 font-medium">{item.timestamp}</p>
+                    <p className="text-[10px] text-slate-400 font-medium font-mono">{item.timestamp}</p>
                   </div>
                 </div>
 
@@ -134,7 +134,7 @@ export const Notifications: React.FC<NotificationsProps> = ({ onNavigate }) => {
                       const target = item.actionUrl!.replace('/student/', '');
                       onNavigate(target);
                     }}
-                    className="text-xs text-brand-600 shrink-0"
+                    className="text-xs text-indigo-600 hover:text-indigo-700 shrink-0"
                   >
                     <span>View</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1" />

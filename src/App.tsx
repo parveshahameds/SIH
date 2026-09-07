@@ -20,6 +20,8 @@ import { CareerLab } from './pages/student/CareerLab';
 import { SkillPassport } from './pages/student/SkillPassport';
 import { Notifications } from './pages/student/Notifications';
 import { Profile as StudentProfilePage } from './pages/student/Profile';
+import { Jobs } from './pages/student/Jobs';
+import { CollegeServices } from './pages/student/CollegeServices';
 
 // Teacher Pages (9 Routes)
 import { TeacherDashboard } from './pages/teacher/Dashboard';
@@ -115,7 +117,10 @@ const AppContent: React.FC = () => {
           case 'attendance': return <StudentAttendance onNavigate={navigate} />;
           case 'gd': return <GroupDiscussion onNavigate={navigate} />;
           case 'career-lab': return <CareerLab onNavigate={navigate} />;
+          case 'jobs': return <Jobs onNavigate={navigate} />;
           case 'skill-passport': return <SkillPassport onNavigate={navigate} />;
+          case 'registration': return <CollegeServices initialTab="registration" onNavigate={navigate} />;
+          case 'hostel': return <CollegeServices initialTab="hostel" onNavigate={navigate} />;
           case 'notifications': return <Notifications onNavigate={navigate} />;
           case 'profile': return <StudentProfilePage onNavigate={navigate} />;
           default: return <StudentDashboard onNavigate={navigate} />;

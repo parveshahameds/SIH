@@ -15,13 +15,13 @@ export const useAIAssistant = () => {
     {
       id: 'msg_welcome',
       sender: 'assistant',
-      content: "Hello Ananya! 👋 I'm your CoLearn AI Tutor & Career Advisor. How can I assist you today? I can explain challenging concepts, debug code, analyze your learning gaps, or help prep for interviews.",
+      content: "Namaste Rajesh! I am **CoopMitra AI**, your 24/7 Cooperative Education & Career Advisor under the **National Council for Cooperative Training (NCCT)** and Ministry of Cooperation. How can I assist your training journey today? I can explain PACS ERP workflows, dairy quality testing protocols, Kisan Credit Card rules, or help prepare for cooperative recruitment boards.",
       timestamp: 'Just now',
       suggestedActions: [
-        'Explain Multi-Head Self-Attention with a real-world analogy',
-        'Debug my PyTorch DataLoader GPU OOM error',
-        'Review my readiness for AI/ML Research Internships',
-        'Summarize today\'s Distributed Systems lecture'
+        'Explain PACS Statutory Reserve 25% allocation rules',
+        'How does Kisan Credit Card 3% prompt repayment rebate work?',
+        'What is the standard protocol for BMC Milk Chilling at 4°C?',
+        'Analyze my Skill Passport match for PACS Secretary opening'
       ]
     }
   ]);
@@ -40,49 +40,89 @@ export const useAIAssistant = () => {
     setMessages((prev) => [...prev, userMsg]);
     setIsTyping(true);
 
-    // Simulate AI thinking and contextual response
     setTimeout(() => {
       let aiResponse: Message;
-
       const lower = userText.toLowerCase();
-      if (lower.includes('attention') || lower.includes('transformer') || lower.includes('deep learning')) {
+
+      if (lower.includes('reserve') || lower.includes('pacs') || lower.includes('bye-law') || lower.includes('accounting') || lower.includes('double entry')) {
         aiResponse = {
           id: `ai_${Date.now()}`,
           sender: 'assistant',
-          content: "Great question! Let's break down **Multi-Head Self-Attention**:\n\nImagine you are reading a mystery novel. When you encounter the word *'he'*, your brain simultaneously checks:\n1. **Syntactic relationship**: Which noun was mentioned 3 words ago?\n2. **Semantic context**: Who holds the weapon in this chapter?\n3. **Tone**: Is the tone tense or reflective?\n\nA single attention head might focus only on syntax. By having multiple heads (e.g., 8 or 16), each head projects Q, K, V into different subspace representations, allowing the model to attend to information from different representation subspaces simultaneously.",
-          codeSnippet: `# PyTorch Multihead Attention Example
-import torch.nn as nn
-multihead_attn = nn.MultiheadAttention(embed_dim=512, num_heads=8, batch_first=True)
-attn_output, attn_weights = multihead_attn(query, key, value)`,
-          suggestedActions: ['Show mathematical derivation of Softmax(QK^T / sqrt(d_k))', 'Create a 3-question mini quiz on this'],
+          content: "### PACS Statutory Reserve & Day-Book Guidelines\n\nUnder standard State Cooperative Societies Acts and NCCT Model Bye-Laws:\n\n1. **Statutory Reserve Fund**: Every cooperative society must transfer **at least 25% of its annual net profit** to the Statutory Reserve Fund *before* declaring any dividend to members.\n2. **Indivisible Reserve**: This fund belongs to the society as an ongoing institution and cannot be divided among individual shareholders.\n3. **Daily Day-Book Balancing**: Total cash receipts minus total disbursements must balance against physical cash in safe before night settlement to the DCCB core banking node.",
+          codeSnippet: `// Standard Daily Cash Balance Audit:
+Closing_Cash_In_Safe = Opening_Cash + Total_Daily_Receipts - Total_Daily_Disbursements;
+Statutory_Reserve_Transfer = Net_Profit * 0.25; // Mandated minimum 25%`,
+          suggestedActions: [
+            'Test my understanding with a 3-question quiz',
+            'Explain Multi-purpose PACS business activities (CSCs, Dawai shops)'
+          ],
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           referenceLinks: [
-            { title: 'CS602 Lecture 4 Slides: Transformers', url: '/student/my-learning' },
-            { title: 'EdScroll #01: Attention Complexity', url: '/student/edscroll' }
+            { title: 'COOP-102 Course: PACS Accounting & Audit', url: '/student/my-learning' },
+            { title: 'EdScroll Reel #5: Double Entry Day-Book', url: '/student/edscroll' }
           ]
         };
-      } else if (lower.includes('career') || lower.includes('resume') || lower.includes('job') || lower.includes('interview')) {
+      } else if (lower.includes('dairy') || lower.includes('milk') || lower.includes('bmc') || lower.includes('chilling') || lower.includes('somatic')) {
         aiResponse = {
           id: `ai_${Date.now()}`,
           sender: 'assistant',
-          content: "Based on your current **Skill Passport**, your technical profile has a **94% match** for NeuralScale Technologies' AI/ML Intern position. \n\n**Key Strengths Detected:**\n• Verified PyTorch & CNN credential (Score: 94%)\n• High CGPA (8.94) in core CS\n\n**Recommendation to boost to 100%:**\n• Review Triton GPU Kernel basics in Career Lab before applying.",
-          suggestedActions: ['Open AI Resume Scorer', 'Start 10-minute Mock AI Interview'],
+          content: "### Dairy Cold-Chain & Quality Control Protocols\n\n1. **4°C Chilling Mandate**: Raw milk must be chilled to **4°C or below within 3 hours of milking** in a Bulk Milk Cooler (BMC). This halts bacterial multiplication and prevents lactic acid souring.\n2. **Adulteration Detection**: Daily tests at the village DCS include Gerber Fat Testing, Lactometer SNF test, Starch (Iodine test), and Urea (DMAB reagent).\n3. **Somatic Cell Count (SCC)**: High SCC (>300,000 cells/ml) indicates sub-clinical bovine mastitis, requiring rapid segregation and teat-dip hygiene intervention.",
+          suggestedActions: [
+            'Show Milk Fat & SNF calculation formula',
+            'Explain Automatic Milk Collection Unit (AMCU) setup'
+          ],
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          referenceLinks: [{ title: 'Explore NeuralScale Job Spec', url: '/student/career-lab' }]
+          referenceLinks: [
+            { title: 'DAIRY-402: Milk Quality & Cold Chain', url: '/student/my-learning' }
+          ]
+        };
+      } else if (lower.includes('kcc') || lower.includes('interest') || lower.includes('credit') || lower.includes('subvention') || lower.includes('loan')) {
+        aiResponse = {
+          id: `ai_${Date.now()}`,
+          sender: 'assistant',
+          content: "### Kisan Credit Card (KCC) Interest Subvention Breakdown\n\nFor short-term crop loans up to **₹3,00,000**:\n\n• **Standard Benchmark Interest Rate**: 9% per annum\n• **Central Government Subvention**: -2.0%\n• **Base Applicable Rate**: 7.0%\n• **Prompt Repayment Incentive (PRI)**: -3.0% (for farmers who repay on or before due date)\n• **Effective Net Interest Paid by Farmer**: **4.0% per annum**",
+          suggestedActions: [
+            'Calculate Scale of Finance for 5-acre paddy crop',
+            'How to handle overdue crop loans (NPA provisioning)'
+          ],
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          referenceLinks: [
+            { title: 'FIN-203: Credit Management & Recovery', url: '/student/my-learning' },
+            { title: 'EdScroll Reel #3: KCC Subvention Math', url: '/student/edscroll' }
+          ]
+        };
+      } else if (lower.includes('career') || lower.includes('job') || lower.includes('match') || lower.includes('pacs secretary')) {
+        aiResponse = {
+          id: `ai_${Date.now()}`,
+          sender: 'assistant',
+          content: "### Cooperative Sector Career Readiness Assessment\n\nBased on your **NCCT Skill Passport**:\n\n• **Top Match**: *PACS Secretary & Business Manager* (**94% Match Score**)\n• **Verified Competencies**: PACS National ERP, Double-Entry Bookkeeping, Model Bye-Laws, Gram Sabha Public Communication.\n\n**Missing Skill to close the 6% gap:**\n• *WDRA Warehouse E-Receipt Trading* (Module AGRI-304).\n\nWould you like to start the 10-minute mock interview for the Cooperative Service Examination Board?",
+          suggestedActions: [
+            'Open AI Cooperative Mock Interview',
+            'View PACS Secretary Job Specs & Apply'
+          ],
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          referenceLinks: [
+            { title: 'Explore Job Opportunities', url: '/student/jobs' },
+            { title: 'Open AI Career Lab', url: '/student/career-lab' }
+          ]
         };
       } else {
         aiResponse = {
           id: `ai_${Date.now()}`,
           sender: 'assistant',
-          content: `I analyzed your query regarding "${userText}". In CoLearn's NEP-aligned knowledge graph, this connects directly to your current semester learning goals. Let's explore step-by-step or test your understanding with a diagnostic drill!`,
-          suggestedActions: ['Break this into foundational steps', 'Show practice problem', 'Summarize key takeaways'],
+          content: `I analyzed your query: "${userText}". In the NCCT Cooperative Training Framework, this directly connects with rural institution building, governance transparency, and farmer-producer welfare. Let's break this down into actionable learning steps!`,
+          suggestedActions: [
+            'Explain theoretical principles',
+            'Show practical village society case study',
+            'Generate a quick 3-question diagnostic'
+          ],
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
       }
 
       setMessages((prev) => [...prev, aiResponse]);
       setIsTyping(false);
-    }, 900);
+    }, 700);
   };
 
   const clearChat = () => {
@@ -90,9 +130,13 @@ attn_output, attn_weights = multihead_attn(query, key, value)`,
       {
         id: 'msg_welcome_fresh',
         sender: 'assistant',
-        content: "Chat cleared! How can I assist your learning or teaching goals right now?",
+        content: "Chat cleared! Ask CoopMitra AI any question on cooperative bye-laws, credit calculations, dairy testing, or career opportunities.",
         timestamp: 'Just now',
-        suggestedActions: ['Explain a topic', 'Help me prep an assignment', 'Review attendance stats']
+        suggestedActions: [
+          'PACS Computerization ERP rules',
+          'KCC Interest Subvention formula',
+          'Dairy 4°C BMC chilling protocols'
+        ]
       }
     ]);
   };

@@ -48,26 +48,26 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
 
   return (
     <aside
-      className={`fixed top-0 left-0 z-30 h-screen bg-slate-900 text-slate-200 border-r border-slate-800 transition-all duration-300 ease-in-out flex flex-col justify-between ${
+      className={`fixed top-0 left-0 z-30 h-screen bg-white text-slate-800 border-r border-slate-200 shadow-xs transition-all duration-300 ease-in-out flex flex-col justify-between ${
         isCollapsed ? 'w-20' : 'w-64'
       }`}
     >
       {/* Brand Header */}
       <div>
-        <div className="h-18 flex items-center justify-between px-4 border-b border-slate-800">
+        <div className="h-18 flex items-center justify-between px-4 border-b border-slate-200">
           <div
             onClick={() => onNavigate('dashboard')}
             className="flex items-center gap-3 cursor-pointer overflow-hidden"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-sky-400 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             {!isCollapsed && (
               <div className="animate-fade-in">
-                <span className="text-lg font-bold text-white font-sans tracking-tight">
-                  Co<span className="text-sky-400">Learn</span>
+                <span className="text-lg font-bold text-slate-900 font-sans tracking-tight">
+                  Co<span className="text-indigo-600">Learn</span>
                 </span>
-                <span className="ml-2 text-[10px] font-bold text-sky-300 bg-sky-950/80 px-1.5 py-0.5 rounded-full border border-sky-800/60 uppercase">
+                <span className="ml-2 text-[10px] font-bold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded-full border border-purple-200 uppercase">
                   Educator
                 </span>
               </div>
@@ -76,7 +76,7 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
 
           <button
             onClick={onToggleCollapse}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors hidden md:block"
+            className="p-1.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors hidden md:block"
             aria-label="Toggle Sidebar"
           >
             {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -96,13 +96,13 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
                 title={isCollapsed ? item.name : undefined}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 group ${
                   isActive
-                    ? 'bg-gradient-to-r from-indigo-600 to-brand-600 text-white shadow-md shadow-indigo-500/20'
-                    : 'text-slate-400 hover:bg-slate-800 hover:text-white'
+                    ? 'bg-indigo-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                    isActive ? 'text-white' : 'text-slate-400 group-hover:text-sky-400'
+                    isActive ? 'text-white' : 'text-slate-500 group-hover:text-indigo-600'
                   }`}
                 />
                 {!isCollapsed && (
@@ -114,8 +114,8 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
                           isActive
                             ? 'bg-white/20 text-white'
                             : item.badge.includes('AI')
-                            ? 'bg-rose-950/80 text-rose-300 border border-rose-800/60 animate-pulse'
-                            : 'bg-slate-800 text-slate-400'
+                            ? 'bg-rose-50 text-rose-700 border border-rose-200'
+                            : 'bg-slate-100 text-slate-600'
                         }`}
                       >
                         {item.badge}
@@ -130,14 +130,14 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
       </div>
 
       {/* Footer Profile & Educator Rating Widget */}
-      <div className="p-3 border-t border-slate-800 bg-slate-950/50">
+      <div className="p-3 border-t border-slate-200 bg-slate-50/70">
         {!isCollapsed && (
-          <div className="mb-3 p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-between text-xs">
+          <div className="mb-3 p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs shadow-xs">
             <div>
-              <p className="text-[10px] text-slate-400">Educator Impact</p>
-              <p className="font-bold text-sky-400">★ {teacherData.rating} / 5.0</p>
+              <p className="text-[10px] text-slate-500">Educator Impact</p>
+              <p className="font-bold text-indigo-600">Rating: {teacherData.rating} / 5.0</p>
             </div>
-            <span className="text-[10px] text-slate-300 bg-slate-700/80 px-2 py-0.5 rounded-full">
+            <span className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
               {teacherData.totalStudents} Students
             </span>
           </div>
@@ -148,12 +148,12 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
             <img
               src={teacherData.avatar}
               alt={teacherData.name}
-              className="w-9 h-9 rounded-xl object-cover ring-2 ring-slate-700 shadow-xs shrink-0"
+              className="w-9 h-9 rounded-xl object-cover ring-1 ring-slate-300 shadow-xs shrink-0"
             />
             {!isCollapsed && (
               <div className="truncate text-left">
-                <p className="text-xs font-bold text-white truncate">{teacherData.name}</p>
-                <p className="text-[10px] text-slate-400 truncate">{teacherData.designation}</p>
+                <p className="text-xs font-bold text-slate-900 truncate">{teacherData.name}</p>
+                <p className="text-[10px] text-slate-500 truncate">{teacherData.designation}</p>
               </div>
             )}
           </div>
@@ -162,7 +162,7 @@ export const TeacherSidebar: React.FC<TeacherSidebarProps> = ({
             <button
               onClick={logout}
               title="Log out"
-              className="p-2 text-slate-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-xl transition-colors"
+              className="p-2 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
             >
               <LogOut className="w-4 h-4" />
             </button>

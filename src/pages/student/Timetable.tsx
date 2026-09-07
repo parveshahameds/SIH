@@ -33,17 +33,17 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in text-slate-100">
+    <div className="space-y-6 animate-fade-in text-slate-900 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
           <div className="flex items-center gap-2.5">
-            <h2 className="text-xl font-extrabold text-white">Academic Schedule & Live Laboratory Telemetry</h2>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-950 text-cyan-300 border border-indigo-700/60">
+            <h2 className="text-xl font-extrabold text-slate-900">Academic Schedule & Live Laboratory Telemetry</h2>
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
               Live Sync
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-500 mt-0.5">
             Synchronized semester schedule with 4-point smart attendance triggers and virtual studio links
           </p>
         </div>
@@ -53,7 +53,7 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
           size="sm"
           icon={Share2}
           onClick={() => alert('Timetable synced to Google Calendar / Apple iCal!')}
-          className="text-xs bg-slate-900 border-slate-800 text-slate-300"
+          className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
         >
           Sync to Calendar
         </Button>
@@ -69,8 +69,8 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
               onClick={() => setSelectedDay(day)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
                 isSelected
-                  ? 'bg-gradient-to-r from-brand-600 to-cyan-600 text-white shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-white'
+                  ? 'bg-indigo-600 text-white shadow-xs'
+                  : 'bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
               {day}
@@ -81,32 +81,32 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
 
       {/* Live Class Highlight Banner if on Monday */}
       {selectedDay === 'Monday' && (
-        <div className="p-5 rounded-3xl cyber-glass border border-cyan-500/50 bg-gradient-to-r from-brand-950/80 via-slate-900 to-cyan-950/40 glow-cyan flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="p-5 rounded-3xl bg-indigo-50/70 border border-indigo-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300 shrink-0">
-              <Video className="w-6 h-6 animate-pulse text-cyan-400" />
+            <div className="w-12 h-12 rounded-2xl bg-indigo-100 border border-indigo-200 flex items-center justify-center text-indigo-700 shrink-0">
+              <Video className="w-6 h-6 animate-pulse text-indigo-600" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-rose-600 text-white uppercase tracking-wider animate-pulse">
                   Live Now
                 </span>
-                <h3 className="text-sm sm:text-base font-bold text-white">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900">
                   CS602: Deep Learning & Neural Networks (Lab 402)
                 </h3>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <p className="text-xs text-slate-600 mt-0.5">
                 Instructor: Dr. Rajesh Verma • 4-Point Smart Attendance Open (Session Key: 849 201)
               </p>
             </div>
           </div>
 
           <Button
-            variant="glow"
+            variant="primary"
             size="sm"
             icon={ShieldCheck}
             onClick={() => onNavigate('attendance')}
-            className="text-xs font-bold whitespace-nowrap"
+            className="text-xs font-bold whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs"
           >
             Verify Attendance (Code: 849 201)
           </Button>
@@ -116,9 +116,9 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
       {/* Schedule Slots Timeline */}
       <div className="space-y-4">
         {slotsForDay.length === 0 ? (
-          <Card variant="default" padding="lg" className="cyber-glass border-slate-800 text-center py-12">
-            <CalendarIcon className="w-10 h-10 text-slate-600 mx-auto mb-2" />
-            <p className="text-sm font-semibold text-slate-300">No scheduled classes for {selectedDay}</p>
+          <Card variant="default" padding="lg" className="bg-white border-slate-200/90 text-center py-12 shadow-xs">
+            <CalendarIcon className="w-10 h-10 text-slate-400 mx-auto mb-2" />
+            <p className="text-sm font-semibold text-slate-700">No scheduled classes for {selectedDay}</p>
             <p className="text-xs text-slate-500 mt-1">Use this self-study block for EdScroll micro-learning or Career Lab projects.</p>
           </Card>
         ) : (
@@ -127,25 +127,25 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
               key={slot.id}
               variant={slot.isLiveNow ? 'elevated' : 'default'}
               padding="md"
-              className={`cyber-glass border-slate-800 transition-all ${
-                slot.isLiveNow ? 'ring-2 ring-cyan-500 glow-cyan' : ''
+              className={`bg-white border-slate-200/90 transition-all shadow-xs ${
+                slot.isLiveNow ? 'ring-2 ring-indigo-500 border-indigo-400' : 'hover:border-slate-300'
               }`}
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 {/* Left: Time and Subject */}
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-cyan-400 text-center min-w-[90px] shrink-0 font-mono">
-                    <Clock className="w-4 h-4 mx-auto text-cyan-400 mb-1" />
+                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-indigo-700 text-center min-w-[90px] shrink-0 font-mono">
+                    <Clock className="w-4 h-4 mx-auto text-indigo-600 mb-1" />
                     <p className="text-xs font-bold leading-tight">{slot.startTime}</p>
                     <p className="text-[10px] text-slate-500">{slot.endTime}</p>
                   </div>
 
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-800 text-cyan-300 font-mono">
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 font-mono">
                         {slot.code}
                       </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white">
+                      <h4 className="text-sm sm:text-base font-bold text-slate-900">
                         {slot.subject}
                       </h4>
                       <Badge
@@ -156,13 +156,13 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
                       </Badge>
                     </div>
 
-                    <div className="flex items-center gap-4 text-xs text-slate-400 flex-wrap">
+                    <div className="flex items-center gap-4 text-xs text-slate-500 flex-wrap">
                       <span className="flex items-center gap-1">
-                        <User className="w-3.5 h-3.5 text-slate-500" />
+                        <User className="w-3.5 h-3.5 text-slate-400" />
                         {slot.instructor}
                       </span>
                       <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-400" />
                         {slot.classroom}
                       </span>
                     </div>
@@ -175,8 +175,8 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
                     onClick={() => toggleReminder(slot.id)}
                     className={`p-2 rounded-xl transition-colors ${
                       reminders[slot.id]
-                        ? 'text-cyan-400 bg-cyan-950 border border-cyan-700'
-                        : 'text-slate-500 hover:text-slate-300 bg-slate-900 border border-slate-800'
+                        ? 'text-indigo-700 bg-indigo-50 border border-indigo-200'
+                        : 'text-slate-400 hover:text-slate-700 bg-slate-50 border border-slate-200'
                     }`}
                     title={reminders[slot.id] ? 'Reminder Set' : 'Set Reminder'}
                   >
@@ -185,11 +185,11 @@ export const Timetable: React.FC<TimetableProps> = ({ onNavigate }) => {
 
                   {slot.isLiveNow ? (
                     <Button
-                      variant="glow"
+                      variant="primary"
                       size="sm"
                       icon={ShieldCheck}
                       onClick={() => onNavigate('attendance')}
-                      className="text-xs font-bold"
+                      className="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs"
                     >
                       Smart Attendance
                     </Button>

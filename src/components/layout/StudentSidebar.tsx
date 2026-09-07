@@ -50,26 +50,26 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
 
   return (
     <aside
-      className={`fixed top-0 left-0 z-30 h-screen cyber-glass border-r border-slate-800 transition-all duration-300 ease-in-out flex flex-col justify-between ${
+      className={`fixed top-0 left-0 z-30 h-screen bg-white border-r border-slate-200 transition-all duration-300 ease-in-out flex flex-col justify-between shadow-xs ${
         isCollapsed ? 'w-20' : 'w-64'
       }`}
     >
       {/* Brand Header */}
       <div>
-        <div className="h-18 flex items-center justify-between px-4 border-b border-slate-800">
+        <div className="h-18 flex items-center justify-between px-4 border-b border-slate-200">
           <div
             onClick={() => onNavigate('dashboard')}
             className="flex items-center gap-3 cursor-pointer overflow-hidden"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20 shrink-0">
+            <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-xs shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             {!isCollapsed && (
               <div className="animate-fade-in">
-                <span className="text-lg font-bold text-white font-sans tracking-tight">
-                  Co<span className="text-cyan-400">Learn</span>
+                <span className="text-lg font-bold text-slate-900 font-sans tracking-tight">
+                  Co<span className="text-indigo-600">Learn</span>
                 </span>
-                <span className="ml-2 text-[10px] font-bold text-cyan-300 bg-cyan-950 px-1.5 py-0.5 rounded-full border border-cyan-800 uppercase">
+                <span className="ml-2 text-[10px] font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded-full border border-indigo-200 uppercase">
                   Student
                 </span>
               </div>
@@ -78,7 +78,7 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
 
           <button
             onClick={onToggleCollapse}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors hidden md:block"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors hidden md:block"
             aria-label="Toggle Sidebar"
           >
             {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -98,13 +98,13 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
                 title={isCollapsed ? item.name : undefined}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 group ${
                   isActive
-                    ? 'bg-gradient-to-r from-brand-600 to-cyan-600 text-white shadow-md shadow-cyan-500/20'
-                    : 'text-slate-400 hover:bg-slate-800/80 hover:text-white'
+                    ? 'bg-indigo-600 text-white shadow-xs'
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                    isActive ? 'text-white' : 'text-slate-400 group-hover:text-cyan-400'
+                    isActive ? 'text-white' : 'text-slate-400 group-hover:text-indigo-600'
                   }`}
                 />
                 {!isCollapsed && (
@@ -116,10 +116,10 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
                           isActive
                             ? 'bg-white/20 text-white'
                             : item.badge === 'Live'
-                            ? 'bg-rose-950 text-rose-400 border border-rose-800 animate-pulse'
+                            ? 'bg-rose-50 text-rose-700 border border-rose-200 animate-pulse'
                             : item.badge === 'Checkpoint'
-                            ? 'bg-amber-950 text-amber-300 border border-amber-800'
-                            : 'bg-slate-800 text-slate-400'
+                            ? 'bg-amber-50 text-amber-700 border border-amber-200'
+                            : 'bg-slate-100 text-slate-600'
                         }`}
                       >
                         {item.badge}
@@ -134,17 +134,17 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
       </div>
 
       {/* Footer Profile & Streak Widget */}
-      <div className="p-3 border-t border-slate-800 bg-slate-950/60">
+      <div className="p-3 border-t border-slate-200 bg-slate-50">
         {!isCollapsed && (
-          <div className="mb-3 p-2.5 rounded-xl bg-amber-950/60 border border-amber-700/50 flex items-center justify-between text-xs">
+          <div className="mb-3 p-2.5 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-between text-xs">
             <div className="flex items-center gap-2">
-              <Flame className="w-4 h-4 text-amber-400 fill-amber-400" />
+              <Flame className="w-4 h-4 text-amber-500 fill-amber-500" />
               <div>
-                <p className="font-bold text-amber-200 leading-none">{studentData.streakDays} Days Streak!</p>
-                <p className="text-[10px] text-amber-400 mt-0.5">+150 XP today</p>
+                <p className="font-bold text-amber-900 leading-none">{studentData.streakDays} Days Streak!</p>
+                <p className="text-[10px] text-amber-700 mt-0.5">+150 XP today</p>
               </div>
             </div>
-            <span className="text-[10px] font-extrabold bg-amber-900 text-amber-200 px-2 py-0.5 rounded-full">
+            <span className="text-[10px] font-extrabold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">
               Lvl {studentData.level}
             </span>
           </div>
@@ -158,14 +158,14 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
             <img
               src={studentData.avatar}
               alt={studentData.name}
-              className="w-9 h-9 rounded-xl object-cover ring-2 ring-slate-700 shrink-0"
+              className="w-9 h-9 rounded-xl object-cover ring-2 ring-slate-200 shrink-0 shadow-xs"
             />
             {!isCollapsed && (
               <div className="truncate text-left">
-                <p className="text-xs font-bold text-white group-hover:text-cyan-400 truncate">
+                <p className="text-xs font-bold text-slate-900 group-hover:text-indigo-600 truncate">
                   {studentData.name}
                 </p>
-                <p className="text-[10px] text-slate-400 truncate">{studentData.batch}</p>
+                <p className="text-[10px] text-slate-500 truncate">{studentData.batch}</p>
               </div>
             )}
           </div>
@@ -174,7 +174,7 @@ export const StudentSidebar: React.FC<StudentSidebarProps> = ({
             <button
               onClick={logout}
               title="Log out"
-              className="p-2 text-slate-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-xl transition-colors"
+              className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
             >
               <LogOut className="w-4 h-4" />
             </button>

@@ -103,22 +103,22 @@ export const Batches: React.FC<BatchesProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in text-slate-100">
+    <div className="space-y-6 animate-fade-in text-slate-900 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
-          <h2 className="text-xl font-extrabold text-white">Academic Cohorts & Batch Management (CRUD)</h2>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <h2 className="text-xl font-extrabold text-slate-900">Academic Cohorts & Batch Management (CRUD)</h2>
+          <p className="text-xs text-slate-500 mt-0.5">
             Manage student enrollments, edit section parameters, and monitor real-time cohort health
           </p>
         </div>
 
         <Button
-          variant="glow"
+          variant="primary"
           size="sm"
           icon={Plus}
           onClick={openCreateModal}
-          className="text-xs font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 shadow-md shadow-cyan-500/25"
+          className="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs"
         >
           Create New Batch
         </Button>
@@ -131,15 +131,15 @@ export const Batches: React.FC<BatchesProps> = ({ onNavigate }) => {
             key={batch.id}
             variant="elevated"
             padding="lg"
-            className="cyber-glass border-slate-800 hover:border-cyan-500/50 transition-all flex flex-col justify-between"
+            className="bg-white border-slate-200/90 hover:border-slate-300 transition-all flex flex-col justify-between shadow-xs"
           >
             <div className="space-y-4">
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h3 className="text-base font-bold text-white leading-snug">
+                  <h3 className="text-base font-bold text-slate-900 leading-snug">
                     {batch.name}
                   </h3>
-                  <p className="text-xs text-cyan-400 font-mono mt-0.5">{batch.code}</p>
+                  <p className="text-xs text-indigo-600 font-mono mt-0.5">{batch.code}</p>
                 </div>
                 <Badge
                   variant={
@@ -156,21 +156,21 @@ export const Batches: React.FC<BatchesProps> = ({ onNavigate }) => {
                 </Badge>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 grid grid-cols-2 gap-4 text-xs">
+              <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 grid grid-cols-2 gap-4 text-xs">
                 <div>
-                  <span className="text-slate-400 font-semibold uppercase text-[10px]">Enrollments</span>
-                  <p className="text-base font-extrabold text-white font-mono mt-0.5">{batch.totalStudents}</p>
+                  <span className="text-slate-500 font-semibold uppercase text-[10px]">Enrollments</span>
+                  <p className="text-base font-extrabold text-slate-900 font-mono mt-0.5">{batch.totalStudents}</p>
                 </div>
                 <div>
-                  <span className="text-slate-400 font-semibold uppercase text-[10px]">Average GPA</span>
-                  <p className="text-base font-extrabold text-cyan-300 font-mono mt-0.5">{batch.averageGpa}</p>
+                  <span className="text-slate-500 font-semibold uppercase text-[10px]">Average GPA</span>
+                  <p className="text-base font-extrabold text-indigo-600 font-mono mt-0.5">{batch.averageGpa}</p>
                 </div>
               </div>
 
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs font-semibold">
-                  <span className="text-slate-400">Attendance Health</span>
-                  <span className="text-white font-mono">{batch.averageAttendance}%</span>
+                  <span className="text-slate-500">Attendance Health</span>
+                  <span className="text-slate-900 font-mono">{batch.averageAttendance}%</span>
                 </div>
                 <ProgressBar
                   value={batch.averageAttendance}
@@ -179,24 +179,24 @@ export const Batches: React.FC<BatchesProps> = ({ onNavigate }) => {
                 />
               </div>
 
-              <div className="pt-2 text-xs text-slate-400 space-y-1 border-t border-slate-800">
+              <div className="pt-2 text-xs text-slate-500 space-y-1 border-t border-slate-100">
                 <p><strong>Representative:</strong> {batch.representative}</p>
-                <p className="text-cyan-400 font-medium"><strong>Next:</strong> {batch.nextSessionTime}</p>
+                <p className="text-indigo-600 font-medium"><strong>Next:</strong> {batch.nextSessionTime}</p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
               <div className="flex items-center gap-1.5">
                 <button
                   onClick={() => openEditModal(batch)}
-                  className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                  className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
                   title="Edit Batch"
                 >
                   <Edit2 className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => handleDeleteBatch(batch.id)}
-                  className="p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-950/50 transition-colors"
+                  className="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors"
                   title="Decommission Batch"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -207,7 +207,7 @@ export const Batches: React.FC<BatchesProps> = ({ onNavigate }) => {
                 variant="primary"
                 size="sm"
                 onClick={() => onNavigate('students')}
-                className="text-xs font-bold"
+                className="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white"
               >
                 Inspect Cohort
               </Button>
@@ -239,16 +239,17 @@ export const Batches: React.FC<BatchesProps> = ({ onNavigate }) => {
                 Cancel
               </Button>
               <Button
-                variant="glow"
+                variant="primary"
                 size="sm"
                 onClick={createModalOpen ? handleCreateBatch : handleUpdateBatch}
+                className="bg-indigo-600 text-white hover:bg-indigo-500"
               >
                 {createModalOpen ? 'Create Batch' : 'Save Changes'}
               </Button>
             </div>
           }
         >
-          <form onSubmit={createModalOpen ? handleCreateBatch : handleUpdateBatch} className="space-y-4 text-slate-100">
+          <form onSubmit={createModalOpen ? handleCreateBatch : handleUpdateBatch} className="space-y-4 text-slate-900">
             <Input
               label="Batch Cohort Name"
               placeholder="e.g. AI-ML Specialization 2026 (Section B)"

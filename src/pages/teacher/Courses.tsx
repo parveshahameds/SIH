@@ -25,7 +25,7 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in text-slate-900 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
@@ -36,11 +36,11 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
         </div>
 
         <Button
-          variant="glow"
+          variant="primary"
           size="sm"
           icon={Plus}
           onClick={() => setUploadModalOpen(true)}
-          className="text-xs"
+          className="text-xs bg-indigo-600 hover:bg-indigo-500 text-white"
         >
           Create New Module
         </Button>
@@ -53,18 +53,18 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
             key={course.id}
             variant="elevated"
             padding="lg"
-            className="border-slate-200/80 space-y-4"
+            className="border-slate-200/90 bg-white space-y-4 shadow-xs"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-1">
-                <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-900 text-white">
+                <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
                   {course.code}
                 </span>
                 <h3 className="text-base font-bold text-slate-900">{course.title}</h3>
                 <p className="text-xs text-slate-500">{course.category} • {course.credits} NEP Credits</p>
               </div>
 
-              <Badge variant="brand" size="sm">
+              <Badge variant="brand" size="sm" className="bg-indigo-50 text-indigo-700 border-indigo-200">
                 {course.totalModules} Modules
               </Badge>
             </div>
@@ -73,9 +73,9 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
               {course.description}
             </p>
 
-            <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 text-xs space-y-2">
+            <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
               <span className="font-bold text-slate-900">Mapped NEP Competencies:</span>
-              <ul className="space-y-1 text-slate-600">
+              <ul className="space-y-1 text-slate-700">
                 {course.learningOutcomes?.map((outcome, idx) => (
                   <li key={idx} className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
@@ -91,7 +91,7 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
                 size="sm"
                 icon={Upload}
                 onClick={() => setUploadModalOpen(true)}
-                className="text-xs"
+                className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
               >
                 Upload Resource
               </Button>
@@ -99,7 +99,7 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
                 variant="primary"
                 size="sm"
                 onClick={() => alert('Opening curriculum syllabus editor...')}
-                className="text-xs"
+                className="text-xs bg-indigo-600 hover:bg-indigo-500 text-white"
               >
                 Edit Syllabus
               </Button>
@@ -120,25 +120,33 @@ export const TeacherCourses: React.FC<TeacherCoursesProps> = ({ onNavigate }) =>
               Cancel
             </Button>
             <Button
-              variant="glow"
+              variant="primary"
               size="sm"
+              icon={Upload}
               onClick={() => {
-                alert('Course material published to students!');
                 setUploadModalOpen(false);
+                alert('Course material uploaded! Generating micro-learning summaries.');
               }}
+              className="bg-indigo-600 hover:bg-indigo-500 text-white"
             >
-              Publish to Batch
+              Upload & Process
             </Button>
           </div>
         }
       >
-        <div className="space-y-4">
-          <Input label="Material Title" placeholder="e.g. Lecture 6: Transformer Multi-Head Attention Slides" />
-          <Input label="Module Number" placeholder="e.g. Module 4" />
-          <div className="border-2 border-dashed border-slate-300 rounded-2xl p-6 text-center text-xs text-slate-500 hover:border-indigo-400 cursor-pointer">
-            <Upload className="w-8 h-8 text-indigo-500 mx-auto mb-2" />
-            <p className="font-semibold text-slate-700">Click to upload PDF, PPT, or Notebook</p>
-            <p className="text-[10px] text-slate-400 mt-1">Supports PDF, Jupyter Notebook (.ipynb), and MP4</p>
+        <div className="space-y-4 text-xs text-slate-800">
+          <div>
+            <label className="block font-bold text-slate-700 mb-1">Module Title</label>
+            <Input placeholder="e.g. Multi-Head Attention Implementations" className="bg-slate-50 border-slate-300 text-slate-900" />
+          </div>
+
+          <div>
+            <label className="block font-bold text-slate-700 mb-1">Upload PDF Syllabus / Slides / Video</label>
+            <div className="p-8 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 text-center space-y-2">
+              <Upload className="w-8 h-8 text-indigo-600 mx-auto" />
+              <p className="text-slate-700 font-medium">Drag and drop slides or syllabus documents here</p>
+              <p className="text-[10px] text-slate-500 font-mono">Supported formats: PDF, PPTX, MP4 (Max 100MB)</p>
+            </div>
           </div>
         </div>
       </Modal>

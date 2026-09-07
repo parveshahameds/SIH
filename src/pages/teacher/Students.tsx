@@ -41,7 +41,7 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
   });
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in text-slate-900 max-w-7xl mx-auto">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
@@ -57,13 +57,13 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
             placeholder="Search by name or roll number..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-64 text-xs"
+            className="w-64 text-xs bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400"
           />
 
           <select
             value={selectedRiskFilter}
             onChange={(e) => setSelectedRiskFilter(e.target.value)}
-            className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            className="bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs font-semibold text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
           >
             <option value="all">All Risk Levels</option>
             <option value="high">High Risk Only</option>
@@ -74,10 +74,10 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
       </div>
 
       {/* Student Records Table */}
-      <Card variant="default" padding="none" className="overflow-hidden">
+      <Card variant="default" padding="none" className="overflow-hidden border-slate-200/90 bg-white shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100">
+            <thead className="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200">
               <tr>
                 <th className="py-3.5 px-4">Student Name & Roll No</th>
                 <th className="py-3.5 px-4">Batch</th>
@@ -96,8 +96,8 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
                 return (
                   <tr
                     key={student.id}
-                    className={`hover:bg-slate-50 transition-colors ${
-                      isHighRisk ? 'bg-rose-50/20' : ''
+                    className={`hover:bg-slate-50/80 transition-colors ${
+                      isHighRisk ? 'bg-rose-50/60' : ''
                     }`}
                   >
                     <td className="py-3.5 px-4">
@@ -105,24 +105,24 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
                         <img
                           src={student.avatar}
                           alt={student.name}
-                          className="w-9 h-9 rounded-xl object-cover ring-1 ring-slate-200"
+                          className="w-9 h-9 rounded-xl object-cover ring-1 ring-slate-200 shadow-xs"
                         />
                         <div>
                           <p className="font-bold text-slate-900">{student.name}</p>
-                          <p className="text-[11px] text-slate-400 font-mono">{student.rollNumber}</p>
+                          <p className="text-[11px] text-slate-500 font-mono">{student.rollNumber}</p>
                         </div>
                       </div>
                     </td>
 
-                    <td className="py-3.5 px-4 text-slate-600 font-medium">{student.batch}</td>
+                    <td className="py-3.5 px-4 text-slate-700 font-medium">{student.batch}</td>
 
-                    <td className="py-3.5 px-4 text-center font-bold text-slate-900">
+                    <td className="py-3.5 px-4 text-center font-bold text-slate-900 font-mono">
                       {student.cgpa}
                     </td>
 
                     <td className="py-3.5 px-4 w-36">
                       <div className="space-y-1">
-                        <span className="font-bold text-slate-900">{student.attendancePercentage}%</span>
+                        <span className="font-bold text-slate-900 font-mono">{student.attendancePercentage}%</span>
                         <ProgressBar
                           value={student.attendancePercentage}
                           size="sm"
@@ -141,7 +141,7 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
                       </Badge>
                     </td>
 
-                    <td className="py-3.5 px-4 text-center font-medium text-slate-700">
+                    <td className="py-3.5 px-4 text-center font-medium text-slate-700 font-mono">
                       {student.completedAssignments} / {student.totalAssignments}
                     </td>
 
@@ -151,7 +151,7 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
                         size="sm"
                         icon={Eye}
                         onClick={() => setInspectedStudent(student)}
-                        className="text-xs"
+                        className="text-xs bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
                       >
                         Inspect
                       </Button>
@@ -181,22 +181,23 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
                 size="sm"
                 icon={Mail}
                 onClick={() => alert(`Email advisory sent to ${inspectedStudent.email}`)}
+                className="bg-indigo-600 hover:bg-indigo-500"
               >
                 Send Academic Advisory
               </Button>
             </div>
           }
         >
-          <div className="space-y-5">
+          <div className="space-y-5 text-slate-100">
             <div className="flex items-center gap-4">
               <img
                 src={inspectedStudent.avatar}
                 alt={inspectedStudent.name}
-                className="w-16 h-16 rounded-2xl object-cover ring-2 ring-indigo-200"
+                className="w-16 h-16 rounded-2xl object-cover ring-2 ring-indigo-500/40"
               />
               <div>
-                <h4 className="text-base font-bold text-slate-900">{inspectedStudent.name}</h4>
-                <p className="text-xs text-slate-500">{inspectedStudent.email}</p>
+                <h4 className="text-base font-bold text-white">{inspectedStudent.name}</h4>
+                <p className="text-xs text-slate-400">{inspectedStudent.email}</p>
                 <div className="flex gap-2 mt-1">
                   <Badge
                     variant={inspectedStudent.aiRiskLevel === 'High' ? 'danger' : 'success'}
@@ -210,12 +211,12 @@ export const Students: React.FC<StudentsProps> = ({ onNavigate }) => {
             </div>
 
             {inspectedStudent.riskFactors && inspectedStudent.riskFactors.length > 0 && (
-              <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs space-y-2">
-                <h5 className="font-bold text-rose-900 flex items-center gap-1.5">
-                  <AlertTriangle className="w-4 h-4 text-rose-600" />
+              <div className="p-4 rounded-2xl bg-rose-950/40 border border-rose-800 text-xs space-y-2">
+                <h5 className="font-bold text-rose-300 flex items-center gap-1.5">
+                  <AlertTriangle className="w-4 h-4 text-rose-400" />
                   Detected AI Risk Indicators:
                 </h5>
-                <ul className="list-disc list-inside text-rose-700 space-y-1">
+                <ul className="list-disc list-inside text-rose-200 space-y-1">
                   {inspectedStudent.riskFactors.map((rf, idx) => (
                     <li key={idx}>{rf}</li>
                   ))}

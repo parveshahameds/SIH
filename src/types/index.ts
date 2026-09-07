@@ -1,4 +1,15 @@
-export type UserRole = 'student' | 'teacher' | 'guest';
+export type UserRole = 'student' | 'teacher' | 'employer' | 'guest';
+
+export type CourseCategory =
+  | 'Cooperative'
+  | 'Finance'
+  | 'Agriculture'
+  | 'Dairy'
+  | 'Entrepreneurship'
+  | 'Digital'
+  | 'Employability'
+  | 'Artificial Intelligence'
+  | 'General';
 
 export interface User {
   id: string;
@@ -16,17 +27,21 @@ export interface StudentProfile extends User {
   role: 'student';
   semester: number;
   batch: string;
+  trainingCentre: string; // e.g., RICM Bengaluru / VAMNICOM Pune / ICM Lucknow
+  programmeName: string; // e.g., HDCM (Higher Diploma in Cooperative Management)
   cgpa: number;
   attendanceRate: number;
   streakDays: number;
   xpPoints: number;
   level: number;
   targetRole: string;
+  faceRegistered: boolean;
+  faceBiometricTemplate?: string;
   skills: {
     name: string;
     level: number; // 1 to 100
     verified: boolean;
-    category: 'technical' | 'soft' | 'domain';
+    category: 'technical' | 'soft' | 'domain' | 'cooperative';
   }[];
   nepCredits: {
     earned: number;
@@ -48,6 +63,25 @@ export interface TeacherProfile extends User {
   pendingReviewsCount: number;
 }
 
+export interface CourseLesson {
+  id: string;
+  title: string;
+  duration: string;
+  type: 'video' | 'reading' | 'quiz' | 'interactive';
+  completed?: boolean;
+  videoUrl?: string;
+  summary?: string;
+}
+
+export interface CourseQuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+  topicTag: string;
+}
+
 export interface Course {
   id: string;
   title: string;
@@ -55,7 +89,7 @@ export interface Course {
   instructor: string;
   instructorAvatar?: string;
   thumbnail: string;
-  category: string;
+  category: CourseCategory;
   progressPercentage: number;
   totalModules: number;
   completedModules: number;
@@ -67,6 +101,18 @@ export interface Course {
   description?: string;
   tags?: string[];
   learningOutcomes?: string[];
+  modulesList?: {
+    id: string;
+    title: string;
+    lessons: CourseLesson[];
+  }[];
+  quiz?: {
+    id: string;
+    title: string;
+    questions: CourseQuizQuestion[];
+    passingScore: number;
+  };
+  offlineAvailable?: boolean;
 }
 
 export interface CheckpointQuestion {
@@ -96,7 +142,7 @@ export interface EdScrollItem {
   title: string;
   description: string;
   tag: string;
-  category: 'AI/ML' | 'Web3' | 'System Design' | 'Algorithms' | 'Career Hacks' | 'Soft Skills';
+  category: CourseCategory | 'AI/ML' | 'Web3' | 'System Design' | 'Algorithms' | 'Career Hacks' | 'Soft Skills';
   readTime: string;
   likesCount: number;
   isLiked?: boolean;

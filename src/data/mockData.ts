@@ -19,369 +19,922 @@ import {
 } from '../types';
 
 export const mockStudentUser: StudentProfile = {
-  id: 'std_1092',
-  name: 'Ananya Sharma',
-  email: 'ananya.s@colearn.edu.in',
+  id: 'ncct_trainee_2026_84',
+  name: 'Rajesh Kumar Patel',
+  email: 'rajesh.patel@ncct.gov.in',
   role: 'student',
   avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-  institution: 'National Institute of Technology',
-  department: 'Computer Science & Engineering',
-  rollNumber: '21CS8042',
-  semester: 6,
-  batch: 'CSE-A (2022-2026)',
-  cgpa: 8.94,
-  attendanceRate: 91.8,
-  streakDays: 14,
-  xpPoints: 3450,
-  level: 7,
-  targetRole: 'AI/ML Research Engineer',
+  institution: 'National Council for Cooperative Training (NCCT)',
+  trainingCentre: 'Regional Institute of Cooperative Management (RICM), Bengaluru',
+  programmeName: 'Higher Diploma in Cooperative Management & Agri-Banking (HDCM)',
+  department: 'Cooperative Governance & Rural Banking',
+  rollNumber: 'RICM-2026-HDCM-042',
+  semester: 2,
+  batch: 'HDCM Batch 2025-2026',
+  cgpa: 8.92,
+  attendanceRate: 94.6,
+  streakDays: 19,
+  xpPoints: 4820,
+  level: 8,
+  targetRole: 'PACS Secretary & Cooperative Rural Banking Officer',
+  faceRegistered: true,
+  faceBiometricTemplate: 'BIO-NCCT-VERIFIED-98421',
   skills: [
-    { name: 'Python & PyTorch', level: 92, verified: true, category: 'technical' },
-    { name: 'Full-Stack React/TS', level: 85, verified: true, category: 'technical' },
-    { name: 'Data Structures & Algorithms', level: 88, verified: true, category: 'technical' },
-    { name: 'System Design', level: 74, verified: false, category: 'technical' },
-    { name: 'Collaborative Problem Solving', level: 95, verified: true, category: 'soft' },
-    { name: 'Technical Presentation', level: 82, verified: true, category: 'soft' },
-    { name: 'Natural Language Processing', level: 79, verified: true, category: 'domain' },
+    { name: 'PACS Computerization & ERP', level: 94, verified: true, category: 'cooperative' },
+    { name: 'Cooperative Accounting & Audit', level: 88, verified: true, category: 'cooperative' },
+    { name: 'Dairy Cold-Chain Management', level: 82, verified: true, category: 'domain' },
+    { name: 'Microfinance & SHG Banking', level: 90, verified: true, category: 'technical' },
+    { name: 'Agricultural Marketing & e-NAM', level: 85, verified: true, category: 'domain' },
+    { name: 'Cyber Hygiene & AePS Payments', level: 78, verified: true, category: 'technical' },
+    { name: 'Gram Sabha Public Communication', level: 92, verified: true, category: 'soft' }
   ],
   nepCredits: {
-    earned: 114,
-    required: 160,
-    major: 68,
-    minor: 22,
-    skillEnhancement: 16,
-    internship: 8,
+    earned: 78,
+    required: 120,
+    major: 44,
+    minor: 18,
+    skillEnhancement: 10,
+    internship: 6
   }
 };
 
 export const mockTeacherUser: TeacherProfile = {
-  id: 'tch_4011',
-  name: 'Dr. Rajesh Verma',
-  email: 'r.verma@colearn.edu.in',
+  id: 'ncct_fac_301',
+  name: 'Dr. Meenakshi Sundaram',
+  email: 'm.sundaram@vamnicom.gov.in',
   role: 'teacher',
   avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-  institution: 'National Institute of Technology',
-  department: 'Department of AI & Data Systems',
-  employeeId: 'EMP-FAC-2018-09',
-  designation: 'Associate Professor & Lead AI Mentor',
-  batches: ['CSE-A (Sem 6)', 'AI-ML Specialization (Year 3)', 'ECE-Data Structures (Sem 4)'],
-  subjects: ['Deep Learning & Neural Networks', 'Advanced Algorithms', 'Distributed Database Systems'],
-  totalStudents: 194,
-  rating: 4.88,
-  pendingReviewsCount: 12
+  institution: 'VAMNICOM (Vaikunth Mehta National Institute), Pune',
+  department: 'Centre for Cooperative Management Studies',
+  employeeId: 'EMP-NCCT-FAC-2019-14',
+  designation: 'Senior Faculty & Lead Cooperative Mentor',
+  batches: ['HDCM Batch 2025-2026', 'PACS Secretaries Executive Program', 'Dairy Coops Certification (Batch 4)'],
+  subjects: ['Cooperative Management & Bye-Laws', 'PACS Accounting & Audit', 'Rural Financial Inclusion'],
+  totalStudents: 148,
+  rating: 4.92,
+  pendingReviewsCount: 9
 };
 
 export const mockStudentCourses: Course[] = [
+  // 1. COOPERATIVE
   {
-    id: 'crs_dl_01',
-    title: 'Deep Learning & Transformer Architectures',
-    code: 'CS602',
-    instructor: 'Dr. Rajesh Verma',
+    id: 'crs_coop_01',
+    title: 'Cooperative Management, Principles & PACS Workflow',
+    code: 'COOP-101',
+    instructor: 'Dr. Meenakshi Sundaram (VAMNICOM)',
     instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80',
-    category: 'Artificial Intelligence',
-    progressPercentage: 68,
-    totalModules: 12,
-    completedModules: 8,
-    totalHours: 36,
+    thumbnail: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop&q=80',
+    category: 'Cooperative',
+    progressPercentage: 85,
+    totalModules: 6,
+    completedModules: 5,
+    totalHours: 28,
     credits: 4,
-    nextLessonTitle: 'Self-Attention Mechanism & Multi-Head Attention',
-    nextLessonDuration: '24 mins',
+    nextLessonTitle: 'PACS Computerization Guidelines & National ERP Standard',
+    nextLessonDuration: '22 mins',
     status: 'in-progress',
-    description: 'Comprehensive study of modern deep learning, focusing on attention models, transformers, and multimodal vision architectures.',
-    tags: ['PyTorch', 'Transformers', 'LLMs', 'Vision'],
+    offlineAvailable: true,
+    description: 'Foundational training on International Cooperative Alliance (ICA) principles, Primary Agricultural Credit Society (PACS) operations, and democratic member governance.',
+    tags: ['ICA Principles', 'PACS Workflow', 'Governance', 'Ministry of Cooperation'],
     learningOutcomes: [
-      'Implement multi-head self-attention from scratch in PyTorch',
-      'Fine-tune pre-trained LLMs using LoRA and parameter-efficient techniques',
-      'Deploy inference models with low-latency GPU pipelines'
-    ]
+      'Master the 7 Rochdale Cooperative Principles in modern rural administration',
+      'Execute standard daily voucher entries and member registry in PACS ERP',
+      'Conduct statutory General Body Meetings in compliance with state Bye-laws'
+    ],
+    quiz: {
+      id: 'quiz_coop_01',
+      title: 'PACS Operations & ICA Principles Mastery Test',
+      passingScore: 70,
+      questions: [
+        {
+          id: 'q_c1',
+          question: 'What is the democratic voting principle followed in a Primary Agricultural Credit Society (PACS)?',
+          options: ['One Share, One Vote', 'One Member, One Vote', 'Weighted by loan size', 'Decided by Registrar only'],
+          correctIndex: 1,
+          explanation: 'Democratic Member Control dictates that each member has exactly one vote irrespective of their shareholding.',
+          topicTag: 'Democratic Governance'
+        },
+        {
+          id: 'q_c2',
+          question: 'Under the Ministry of Cooperation national initiative, what is the core purpose of PACS computerization?',
+          options: [
+            'Replacing physical banks entirely',
+            'Standardizing accounting on a single ERP with transparency, audit trails, and multi-service business capabilities',
+            'Closing non-profitable credit societies',
+            'Restricting credit to large landowners only'
+          ],
+          correctIndex: 1,
+          explanation: 'PACS computerization brings common ERP software, transparent online audits, and diversifies PACS into multipurpose hubs (dawai shops, CSCs, petrol outlets).',
+          topicTag: 'PACS Computerization'
+        }
+      ]
+    }
   },
   {
-    id: 'crs_sys_02',
-    title: 'Distributed Systems & Cloud Scale Architecture',
-    code: 'CS604',
-    instructor: 'Prof. Sunita Pillai',
-    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80',
-    category: 'Cloud Engineering',
-    progressPercentage: 45,
-    totalModules: 10,
-    completedModules: 4,
-    totalHours: 30,
-    credits: 3,
-    nextLessonTitle: 'Consensus Protocols: Raft vs Paxos Deep Dive',
-    nextLessonDuration: '32 mins',
-    status: 'in-progress',
-    description: 'Learn foundational concepts behind cloud infrastructure, event-driven microservices, fault tolerance, and replication.',
-    tags: ['Kafka', 'Docker', 'Consensus', 'Kubernetes'],
-    learningOutcomes: [
-      'Design fault-tolerant distributed storage systems',
-      'Implement leader election and replication logs',
-      'Optimize horizontal scalability and rate limiting'
-    ]
-  },
-  {
-    id: 'crs_algo_03',
-    title: 'Advanced Graph Algorithms & Dynamic Programming',
-    code: 'CS601',
-    instructor: 'Dr. Rajesh Verma',
-    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop&q=80',
-    category: 'Computer Science Core',
-    progressPercentage: 88,
-    totalModules: 14,
-    completedModules: 12,
-    totalHours: 42,
-    credits: 4,
-    nextLessonTitle: 'Max-Flow Min-Cut: Dinic Algorithm & Matching',
-    nextLessonDuration: '18 mins',
-    status: 'in-progress',
-    description: 'Master advanced algorithmic paradigms required for high-frequency trading, routing networks, and tier-1 tech interviews.',
-    tags: ['Graphs', 'DP', 'Hard Optimization', 'Competitive'],
-    learningOutcomes: [
-      'Solve NP-hard reductions and network flow formulations',
-      'Analyze amortized complexity of disjoint-set and advanced heaps'
-    ]
-  },
-  {
-    id: 'crs_full_04',
-    title: 'Production React, Next.js & TypeScript Architecture',
-    code: 'SE302',
-    instructor: 'Er. Kevin Vance',
-    instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
-    thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&auto=format&fit=crop&q=80',
-    category: 'Software Engineering',
-    progressPercentage: 100,
+    id: 'crs_coop_02',
+    title: 'Cooperative Accounting, Audit & Statutory Compliance',
+    code: 'COOP-102',
+    instructor: 'Prof. Harish Chandra (RICM Lucknow)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80',
+    category: 'Cooperative',
+    progressPercentage: 60,
     totalModules: 8,
-    completedModules: 8,
-    totalHours: 24,
-    credits: 2,
-    nextLessonTitle: 'Course Completed! View Certificate',
+    completedModules: 5,
+    totalHours: 32,
+    credits: 4,
+    nextLessonTitle: 'Trial Balance Reconciliation & Bad Debt Provisioning',
+    nextLessonDuration: '28 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Double-entry bookkeeping tailored for rural societies, NPA categorization, dividend calculation, and preparation for Registrar statutory audit.',
+    tags: ['Double Entry', 'Statutory Audit', 'NPA Classification', 'Dividend Distribution'],
+    learningOutcomes: [
+      'Maintain day-books, cash ledgers, and produce verified monthly balance sheets',
+      'Compute statutory reserve fund allocations (min 25% of net profits)',
+      'Prepare societies for internal and State Cooperative Audit department inspections'
+    ],
+    quiz: {
+      id: 'quiz_coop_02',
+      title: 'Cooperative Bookkeeping & Audit Exam',
+      passingScore: 75,
+      questions: [
+        {
+          id: 'q_acc1',
+          question: 'What percentage of net profit must every cooperative society transfer to the Statutory Reserve Fund according to typical cooperative laws?',
+          options: ['10%', '15%', 'At least 25%', '50%'],
+          correctIndex: 2,
+          explanation: 'Under standard Cooperative Societies Acts, a minimum of 25% of annual net profit must be placed into the Statutory Reserve Fund before dividend distribution.',
+          topicTag: 'Reserve Fund Allocation'
+        }
+      ]
+    }
+  },
+  {
+    id: 'crs_coop_03',
+    title: 'Cooperative Governance & Model Bye-Laws for PACS',
+    code: 'COOP-103',
+    instructor: 'Smt. Kavitha Raman (RICM Bengaluru)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?w=600&auto=format&fit=crop&q=80',
+    category: 'Cooperative',
+    progressPercentage: 100,
+    totalModules: 5,
+    completedModules: 5,
+    totalHours: 20,
+    credits: 3,
+    nextLessonTitle: 'Course Completed! Download Certificate',
     nextLessonDuration: '0 min',
     status: 'completed',
-    description: 'End-to-end modern web application development with design systems, state management, and edge deployments.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'Next.js'],
+    offlineAvailable: true,
+    description: 'Detailed analysis of Model Bye-Laws enabling PACS to undertake 25+ business activities including LPG distribution, CSC services, warehouse management, and retail.',
+    tags: ['Model Bye-Laws', 'Multi-Purpose PACS', 'Board of Directors', 'Legal Compliance'],
     learningOutcomes: [
-      'Architect maintainable component libraries and custom hooks',
-      'Build zero-downtime server-rendered web applications'
+      'Adopt Model Bye-laws in Special General Body meetings',
+      'Structure board resolutions for opening new commercial verticals'
     ]
+  },
+
+  // 2. FINANCE
+  {
+    id: 'crs_fin_01',
+    title: 'Financial Literacy, SHG Banking & Micro-Credit',
+    code: 'FIN-201',
+    instructor: 'Shri Arvind Joshi (NABARD Certified Trainer)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&auto=format&fit=crop&q=80',
+    category: 'Finance',
+    progressPercentage: 72,
+    totalModules: 6,
+    completedModules: 4,
+    totalHours: 24,
+    credits: 3,
+    nextLessonTitle: 'Credit Appraisal of Joint Liability Groups (JLGs) & SHGs',
+    nextLessonDuration: '18 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Empowering rural households with financial planning, SHG-Bank linkage models, savings accounts, micro-insurance (PMJJBY, PMSBY), and credit discipline.',
+    tags: ['SHG Linkage', 'Microfinance', 'PMJJBY', 'Credit Discipline'],
+    learningOutcomes: [
+      'Evaluate loan applications using 5 Cs of credit analysis for rural borrowers',
+      'Facilitate SHG internal lending and bank credit linkage under DAY-NRLM',
+      'Explain social security insurance benefits to rural members'
+    ],
+    quiz: {
+      id: 'quiz_fin_01',
+      title: 'Rural Micro-Credit & SHG Linkage Quiz',
+      passingScore: 70,
+      questions: [
+        {
+          id: 'q_f1',
+          question: 'What is the key principle of peer guarantee in a Joint Liability Group (JLG)?',
+          options: [
+            'Members pledge their land as physical collateral',
+            'All members are jointly and severally liable for individual loan repayments',
+            'Government pays the default',
+            'No repayment is needed if rainfall fails'
+          ],
+          correctIndex: 1,
+          explanation: 'In JLGs, mutual trust and joint liability act as social collateral for smallholders and tenant farmers.',
+          topicTag: 'JLG Credit Assessment'
+        }
+      ]
+    }
+  },
+  {
+    id: 'crs_fin_02',
+    title: 'Digital Payments, Micro-ATMs & AePS for Rural Outlets',
+    code: 'FIN-202',
+    instructor: 'Er. Kevin Vance & NPCI Rural Division',
+    instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?w=600&auto=format&fit=crop&q=80',
+    category: 'Finance',
+    progressPercentage: 40,
+    totalModules: 5,
+    completedModules: 2,
+    totalHours: 18,
+    credits: 2,
+    nextLessonTitle: 'Aadhaar Enabled Payment System (AePS) Merchant Setup & Reconciliation',
+    nextLessonDuration: '25 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Operating Micro-ATMs, Aadhaar Pay, QR-based UPI collections, and Direct Benefit Transfer (DBT) disbursement at village doorstep cooperative centers.',
+    tags: ['Micro-ATM', 'AePS', 'UPI 123Pay', 'DBT', 'NPCI'],
+    learningOutcomes: [
+      'Operate biometric finger-scanner POS terminals securely without transaction drops',
+      'Resolve failed DBT disbursement issues through NPCI mapper verification'
+    ]
+  },
+  {
+    id: 'crs_fin_03',
+    title: 'Credit Management, Kisan Credit Card (KCC) & Recovery',
+    code: 'FIN-203',
+    instructor: 'Dr. Rajesh Verma (VAMNICOM)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&auto=format&fit=crop&q=80',
+    category: 'Finance',
+    progressPercentage: 90,
+    totalModules: 6,
+    completedModules: 5,
+    totalHours: 26,
+    credits: 3,
+    nextLessonTitle: 'Interest Subvention Scheme & Prompt Repayment Incentive (PRI)',
+    nextLessonDuration: '15 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Comprehensive KCC scheme mechanics, Scale of Finance (SOF) determination by DLTC, interest subvention calculation, and ethical loan recovery protocols.',
+    tags: ['KCC', 'Interest Subvention', 'Scale of Finance', 'NPA Recovery'],
+    learningOutcomes: [
+      'Calculate crop loan limits according to District Level Technical Committee (DLTC) scale',
+      'Claim Central Government 3% prompt repayment incentive for timely repaying farmers'
+    ],
+    quiz: {
+      id: 'quiz_fin_03',
+      title: 'KCC Scale of Finance & Subvention Test',
+      passingScore: 80,
+      questions: [
+        {
+          id: 'q_kcc1',
+          question: 'With 2% interest subvention and 3% prompt repayment incentive (PRI), what is the effective annual interest rate for farmers on short-term crop loans up to ₹3 Lakh?',
+          options: ['9%', '7%', '4%', '0%'],
+          correctIndex: 2,
+          explanation: 'Standard rate is 9%. Subvention brings it to 7%, and with 3% prompt repayment incentive, the effective rate is only 4% per annum.',
+          topicTag: 'KCC Subvention & PRI'
+        }
+      ]
+    }
+  },
+
+  // 3. AGRICULTURE
+  {
+    id: 'crs_agri_01',
+    title: 'Agricultural Marketing, e-NAM & Post-Harvest Value Chains',
+    code: 'AGRI-301',
+    instructor: 'Dr. B. K. Sharma (ICM Chandigarh)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=600&auto=format&fit=crop&q=80',
+    category: 'Agriculture',
+    progressPercentage: 55,
+    totalModules: 7,
+    completedModules: 4,
+    totalHours: 26,
+    credits: 3,
+    nextLessonTitle: 'Electronic National Agriculture Market (e-NAM) Assaying & Bidding',
+    nextLessonDuration: '30 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Post-harvest handling, quality grading, assaying parameters, e-NAM portal trading, and establishing primary processing facilities at PACS level.',
+    tags: ['e-NAM', 'Grading & Assaying', 'Value Chain', 'Post-Harvest Loss Reduction'],
+    learningOutcomes: [
+      'Register farmers and lots on e-NAM for competitive pan-India bidding',
+      'Set up WDRA-compliant village warehousing and pledge loan financing'
+    ]
+  },
+  {
+    id: 'crs_agri_02',
+    title: 'Farm Business Management & Farmer Producer Organisations (FPO)',
+    code: 'AGRI-302',
+    instructor: 'Dr. Meenakshi Sundaram (VAMNICOM)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&auto=format&fit=crop&q=80',
+    category: 'Agriculture',
+    progressPercentage: 45,
+    totalModules: 8,
+    completedModules: 3,
+    totalHours: 30,
+    credits: 4,
+    nextLessonTitle: 'Input Aggregation & Bulk Purchasing Economies for FPO Clusters',
+    nextLessonDuration: '24 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Formation, registration under Companies Act / Cooperative Societies Act, business plan drafting, equity grant schemes, and credit guarantee coverage for FPOs.',
+    tags: ['FPO Strategy', 'Agri-Business', 'Equity Grant', 'Input Supply'],
+    learningOutcomes: [
+      'Draft bankable FPO business plans for seed processing and fertilizer dealership',
+      'Access SFAC Equity Grant and NABKISAN credit guarantees'
+    ]
+  },
+  {
+    id: 'crs_agri_03',
+    title: 'Sustainable Agriculture, Organic Farming & Bio-Inputs',
+    code: 'AGRI-303',
+    instructor: 'Dr. Sunita Pillai & National Organic Centre',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&auto=format&fit=crop&q=80',
+    category: 'Agriculture',
+    progressPercentage: 100,
+    totalModules: 5,
+    completedModules: 5,
+    totalHours: 22,
+    credits: 3,
+    nextLessonTitle: 'Course Completed! View Badge',
+    nextLessonDuration: '0 min',
+    status: 'completed',
+    offlineAvailable: true,
+    description: 'Natural farming techniques, Paramparagat Krishi Vikas Yojana (PKVY), bio-fertilizer production at village level, and PGS-India organic certification.',
+    tags: ['Organic Certification', 'Natural Farming', 'PKVY', 'Bio-fertilizer'],
+    learningOutcomes: [
+      'Implement Participatory Guarantee System (PGS-India) for cluster certification',
+      'Manage cooperative vermicompost and liquid bio-fertilizer manufacturing units'
+    ]
+  },
+
+  // 4. DAIRY
+  {
+    id: 'crs_dairy_01',
+    title: 'Dairy Cooperative Management & Village Procurement Models',
+    code: 'DAIRY-401',
+    instructor: 'Dr. Anand Kurien (National Dairy Development Board Panel)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?w=600&auto=format&fit=crop&q=80',
+    category: 'Dairy',
+    progressPercentage: 92,
+    totalModules: 6,
+    completedModules: 5,
+    totalHours: 24,
+    credits: 3,
+    nextLessonTitle: 'Automatic Milk Collection Unit (AMCU) Integration with Member Accounts',
+    nextLessonDuration: '16 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Mastering the 3-tier Anand Pattern (Village Dairy Cooperative Society, District Milk Union, State Milk Federation), daily procurement systems, and producer bonus management.',
+    tags: ['Anand Pattern', 'AMCU', 'Milk Procurement', 'NDDB', 'Dairy Federation'],
+    learningOutcomes: [
+      'Establish and manage a Primary Dairy Cooperative Society (DCS)',
+      'Automate daily morning/evening milk intake with electronic fat testing & instant payment receipts',
+      'Calculate annual price difference bonus for farmer-producers based on milk quality'
+    ],
+    quiz: {
+      id: 'quiz_dairy_01',
+      title: 'Dairy Cooperative Structure & AMCU Quiz',
+      passingScore: 75,
+      questions: [
+        {
+          id: 'q_d1',
+          question: 'In the Anand 3-tier cooperative dairy model, who is the owner and sole supplier of the Primary Dairy Cooperative Society (DCS)?',
+          options: ['State Government', 'Private Dairies', 'Village Milk Producers / Farmers', 'Municipal Corporation'],
+          correctIndex: 2,
+          explanation: 'The dairy producers themselves are the voting members and owners who supply milk and receive patronage refunds.',
+          topicTag: 'Anand Pattern Ownership'
+        }
+      ]
+    }
+  },
+  {
+    id: 'crs_dairy_02',
+    title: 'Milk Quality Testing, Hygiene, Somatic Cell Count & Cold Chain',
+    code: 'DAIRY-402',
+    instructor: 'Dr. Sunita Pillai (RICM Pune)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&auto=format&fit=crop&q=80',
+    category: 'Dairy',
+    progressPercentage: 70,
+    totalModules: 5,
+    completedModules: 3,
+    totalHours: 20,
+    credits: 3,
+    nextLessonTitle: 'Bulk Milk Cooler (BMC) Maintenance & Rapid Chilling to 4°C',
+    nextLessonDuration: '20 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Adulteration testing (urea, starch, detergent detection), Methylene Blue Reduction Test (MBRT), Somatic Cell Count (SCC), and Bulk Milk Cooler (BMC) operations.',
+    tags: ['MBRT', 'Fat/SNF', 'Bulk Milk Cooler', 'Clean Milk Production', 'Cold Chain'],
+    learningOutcomes: [
+      'Perform Gerber Fat Test and Lactometer SNF calculation accurately',
+      'Prevent milk souring by chilling milk to under 4°C within 3 hours of milking',
+      'Identify sub-clinical mastitis using California Mastitis Test (CMT)'
+    ],
+    quiz: {
+      id: 'quiz_dairy_02',
+      title: 'Milk Quality, Adulteration & Cold Chain Diagnostics',
+      passingScore: 80,
+      questions: [
+        {
+          id: 'q_dq1',
+          question: 'To preserve microbial quality and prevent bacterial multiplication, raw milk in a Bulk Milk Cooler (BMC) should be chilled to what temperature?',
+          options: ['15°C', '10°C', '4°C or below', '0°C (frozen)'],
+          correctIndex: 2,
+          explanation: 'Chilling raw milk rapidly to 4°C or lower halts bacterial proliferation while maintaining fat emulsion.',
+          topicTag: 'Cold Chain Temperature'
+        },
+        {
+          id: 'q_dq2',
+          question: 'A high Somatic Cell Count (SCC > 300,000 cells/ml) in pooled dairy milk is a primary indicator of what condition?',
+          options: ['Excess water addition', 'Bovine Mastitis (udder infection)', 'High protein content', 'Low calcium levels'],
+          correctIndex: 1,
+          explanation: 'Elevated Somatic Cell Count indicates an immune response to udder infection (mastitis), requiring clean milking protocol intervention.',
+          topicTag: 'Somatic Cell Count (SCC)'
+        }
+      ]
+    }
+  },
+
+  // 5. ENTREPRENEURSHIP
+  {
+    id: 'crs_entr_01',
+    title: 'Rural Entrepreneurship, SHG Enterprises & PMFME Scheme',
+    code: 'ENTR-501',
+    instructor: 'Shri Vikramaditya Sharma (EDII Mentor)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=80',
+    category: 'Entrepreneurship',
+    progressPercentage: 65,
+    totalModules: 6,
+    completedModules: 4,
+    totalHours: 24,
+    credits: 3,
+    nextLessonTitle: 'PM-FME 35% Credit-Linked Subsidy Application & One District One Product (ODOP)',
+    nextLessonDuration: '25 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Starting village food processing units (oil mills, dal processing, pickle, honey packaging) under PM Formalisation of Micro food processing Enterprises (PMFME).',
+    tags: ['PMFME', 'ODOP', 'Rural Enterprise', 'Food Processing'],
+    learningOutcomes: [
+      'Identify viable One District One Product (ODOP) value-addition opportunities',
+      'Prepare credit-linked capital subsidy applications with FSSAI compliance'
+    ]
+  },
+  {
+    id: 'crs_entr_02',
+    title: 'Business Planning, Detailed Project Report (DPR) & Feasibility',
+    code: 'ENTR-502',
+    instructor: 'Dr. Harish Chandra (RICM Lucknow)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
+    category: 'Entrepreneurship',
+    progressPercentage: 50,
+    totalModules: 5,
+    completedModules: 2,
+    totalHours: 20,
+    credits: 3,
+    nextLessonTitle: 'Financial Projections: DSCR, Break-Even Analysis & Working Capital',
+    nextLessonDuration: '30 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Step-by-step drafting of bankable DPRs for cooperative ventures, calculating Debt Service Coverage Ratio (DSCR), Net Present Value (NPV), and payback period.',
+    tags: ['DPR Formulation', 'DSCR', 'Financial Feasibility', 'Bankable Proposal'],
+    learningOutcomes: [
+      'Calculate Debt Service Coverage Ratio (DSCR > 1.5) to secure bank credit approval',
+      'Model seasonal working capital requirements for agri-input procurement'
+    ]
+  },
+  {
+    id: 'crs_entr_03',
+    title: 'Digital Marketing & Social Commerce for Rural Produce & Crafts',
+    code: 'ENTR-503',
+    instructor: 'Ms. Pooja Hegde (E-Commerce Specialist)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&auto=format&fit=crop&q=80',
+    category: 'Entrepreneurship',
+    progressPercentage: 80,
+    totalModules: 5,
+    completedModules: 4,
+    totalHours: 18,
+    credits: 2,
+    nextLessonTitle: 'Cataloguing Village Crafts on ONDC (Open Network for Digital Commerce)',
+    nextLessonDuration: '18 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Selling village products through ONDC, GeM portal, WhatsApp Business catalogue, barcode packaging, and regional storytelling branding.',
+    tags: ['ONDC', 'WhatsApp Commerce', 'Packaging & Branding', 'GeM Portal'],
+    learningOutcomes: [
+      'List SHG products on the Government e-Marketplace (GeM) Saras collection',
+      'Create high-converting mobile catalogues on WhatsApp Business'
+    ]
+  },
+
+  // 6. DIGITAL
+  {
+    id: 'crs_dig_01',
+    title: 'Computer Basics, MS Office & Cloud Tools for PACS Staff',
+    code: 'DIG-601',
+    instructor: 'Er. Kevin Vance (Digital Literacy Lead)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=80',
+    category: 'Digital',
+    progressPercentage: 100,
+    totalModules: 6,
+    completedModules: 6,
+    totalHours: 24,
+    credits: 3,
+    nextLessonTitle: 'Course Completed! Download Certificate',
+    nextLessonDuration: '0 min',
+    status: 'completed',
+    offlineAvailable: true,
+    description: 'Practical spreadsheet modeling for member loans, formula automations (VLOOKUP, SUMIFS), document formatting, email protocols, and cloud backup.',
+    tags: ['Spreadsheet Modeling', 'PACS Automation', 'Cloud Drive', 'Data Entry'],
+    learningOutcomes: [
+      'Build automated loan calculation sheets with interest amortization tables',
+      'Manage secure multi-user folders in cloud storage with access permissions'
+    ]
+  },
+  {
+    id: 'crs_dig_02',
+    title: 'Internet, e-Governance Portals & Rural Citizen Services',
+    code: 'DIG-602',
+    instructor: 'Shri Aditya Kulkarni (Common Services Center Lead)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80',
+    category: 'Digital',
+    progressPercentage: 60,
+    totalModules: 5,
+    completedModules: 3,
+    totalHours: 18,
+    credits: 2,
+    nextLessonTitle: 'Providing 50+ Citizen G2C Services through PACS as CSC Centers',
+    nextLessonDuration: '22 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Transforming PACS into Common Service Centers (CSCs) delivering DigiLocker, PAN, e-Shram, PM-KISAN KYC, crop insurance registration, and railway ticketing.',
+    tags: ['CSC Services', 'PM-KISAN', 'DigiLocker', 'G2C Delivery'],
+    learningOutcomes: [
+      'Process PM-KISAN biometric e-KYC and land record linking for farmers',
+      'Issue digitally signed certificates and land revenue extracts (7/12, RTC)'
+    ]
+  },
+  {
+    id: 'crs_dig_03',
+    title: 'Cybersecurity, Phishing Defense & Cyber Hygiene for Rural Banks',
+    code: 'DIG-603',
+    instructor: 'Dr. Rajesh Verma (CoLearn AI Systems)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80',
+    category: 'Digital',
+    progressPercentage: 85,
+    totalModules: 4,
+    completedModules: 3,
+    totalHours: 16,
+    credits: 2,
+    nextLessonTitle: 'Preventing Biometric Cloning & Social Engineering Scams in AePS',
+    nextLessonDuration: '14 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Crucial cyber hygiene protocols for cooperative banks and PACS: password management, ransomware prevention, recognizing fraudulent calls, and RBI reporting.',
+    tags: ['Cyber Hygiene', 'AePS Fraud Prevention', 'RBI Guidelines', 'Data Privacy'],
+    learningOutcomes: [
+      'Detect voice phishing (vishing) and fake APK loan apps targeting farmers',
+      'Follow 2FA login procedures and implement daily automated database backups'
+    ],
+    quiz: {
+      id: 'quiz_dig_03',
+      title: 'Cyber Hygiene & Rural Banking Security Test',
+      passingScore: 80,
+      questions: [
+        {
+          id: 'q_sec1',
+          question: 'If a caller claims to be a Cooperative Bank IT Officer asking for an OTP to unlock the PACS ERP software, what should the trainee do?',
+          options: [
+            'Immediately share the OTP',
+            'Never share the OTP, terminate the call, and report the fraud attempt on 1930 Cyber Helpline',
+            'Ask for their employee ID and then share it',
+            'Write the OTP on the public notice board'
+          ],
+          correctIndex: 1,
+          explanation: 'Legitimate bank and IT personnel will NEVER ask for OTPs or passwords. All suspected scams must be reported to 1930.',
+          topicTag: 'Phishing Defense'
+        }
+      ]
+    }
+  },
+
+  // 7. EMPLOYABILITY
+  {
+    id: 'crs_emp_01',
+    title: 'Workplace Communication, Gram Sabha Leadership & Teamwork',
+    code: 'EMP-701',
+    instructor: 'Prof. Ananya Sen (Leadership Coach)',
+    instructorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=80',
+    category: 'Employability',
+    progressPercentage: 75,
+    totalModules: 5,
+    completedModules: 4,
+    totalHours: 20,
+    credits: 2,
+    nextLessonTitle: 'Managing Conflict & Resolving Grievances in General Body Meetings',
+    nextLessonDuration: '20 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Effective oral and written communication in regional languages and English, active listening, negotiation, and presenting annual cooperative reports with clarity.',
+    tags: ['Gram Sabha Communication', 'Conflict Resolution', 'Presentation', 'Active Listening'],
+    learningOutcomes: [
+      'Deliver persuasive presentations during annual general body meetings',
+      'Draft formal board resolutions and government correspondence'
+    ]
+  },
+  {
+    id: 'crs_emp_02',
+    title: 'Resume Building, Skill Profiling & Digital Portfolio for Cooperatives',
+    code: 'EMP-702',
+    instructor: 'Career Foundry AI & NCCT Placement Cell',
+    instructorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&auto=format&fit=crop&q=80',
+    category: 'Employability',
+    progressPercentage: 90,
+    totalModules: 4,
+    completedModules: 3,
+    totalHours: 14,
+    credits: 2,
+    nextLessonTitle: 'Generating Verifiable Skill Passport Links for Job Applications',
+    nextLessonDuration: '12 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Crafting high-impact resumes tailored for DCCBs, dairy federations, PACS, and agri-startups, showcasing verified NSQF credentials and practical field training.',
+    tags: ['Skill Passport', 'Resume Writing', 'NCCT Certification', 'Job Search'],
+    learningOutcomes: [
+      'Format resumes with quantifiable achievements (e.g. "Recovered 98% of crop loans")',
+      'Embed QR-linked verified Skill Passport credentials in job applications'
+    ]
+  },
+  {
+    id: 'crs_emp_03',
+    title: 'Interview Skills, Board Panels & Professional Ethics',
+    code: 'EMP-703',
+    instructor: 'Dr. Rajesh Verma & Cooperative Recruitment Board Panel',
+    instructorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=80',
+    category: 'Employability',
+    progressPercentage: 60,
+    totalModules: 5,
+    completedModules: 3,
+    totalHours: 18,
+    credits: 2,
+    nextLessonTitle: 'Mock Interview: Handling Banking Ombudsman & Audit Questions',
+    nextLessonDuration: '25 mins',
+    status: 'in-progress',
+    offlineAvailable: true,
+    description: 'Preparing for Cooperative Service Examination Board (CSEB) interviews, body language, ethics of financial stewardship, and handling situational questions.',
+    tags: ['CSEB Interview', 'Professional Ethics', 'Body Language', 'Mock Interview'],
+    learningOutcomes: [
+      'Answer technical banking and bye-law scenarios with confidence in panel interviews',
+      'Demonstrate integrity and fiduciary duty towards cooperative member funds'
+    ],
+    quiz: {
+      id: 'quiz_emp_03',
+      title: 'Cooperative Fiduciary Ethics & Interview Preparedness',
+      passingScore: 75,
+      questions: [
+        {
+          id: 'q_e1',
+          question: 'In a situation where a relative asks for loan sanction without following required KYC documentation, what is the ethically correct response?',
+          options: [
+            'Approve the loan quietly because they are family',
+            'Politely refuse and mandate complete KYC compliance as required by RBI and Cooperative Bye-laws',
+            'Ask for a cash bribe',
+            'Ignore the PACS audit rules'
+          ],
+          correctIndex: 1,
+          explanation: 'Fiduciary responsibility and equal compliance for all members ensure the safety and trust of the cooperative ecosystem.',
+          topicTag: 'Fiduciary Responsibility'
+        }
+      ]
+    }
   }
 ];
 
-// Sequential EdScroll items with order 1-6 and checkpoint requirements
+// Sequential NCCT EdScroll micro-learning reels
 export const mockEdScrollFeed: EdScrollItem[] = [
   {
     id: 'ed_01',
     order: 1,
-    creatorName: 'AI Research Lab @ CoLearn',
-    creatorRole: 'Automated Micro-Tutor',
-    creatorAvatar: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop&q=80',
-    title: '1. Why Self-Attention scales as O(N²)',
-    description: 'In vanilla Transformer attention, every token computes dot-products with all other tokens. Multiplying Q by K^T yields an N x N matrix. As sequence length N doubles from 2k to 4k tokens, memory footprint quadruples!',
-    tag: '#DeepLearning',
-    category: 'AI/ML',
+    creatorName: 'NCCT Learning Lab',
+    creatorRole: 'Ministry of Cooperation Mentor',
+    creatorAvatar: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=100&auto=format&fit=crop&q=80',
+    title: '1. What is the Core Power of PACS Computerization?',
+    description: 'Primary Agricultural Credit Societies (PACS) are the bedrock of India rural credit. By connecting 63,000+ PACS onto a single cloud ERP, transparency surges, audits occur in real-time, and PACS become multi-purpose business hubs (dawai shops, petrol outlets, and CSCs)!',
+    tag: '#PACSComputerization',
+    category: 'Cooperative',
     readTime: '45s Reel',
-    likesCount: 1420,
-    sharesCount: 382,
+    likesCount: 2450,
+    sharesCount: 680,
     isLiked: true,
     isCompleted: true,
     isLocked: false,
-    keyTakeaway: 'FlashAttention optimizes GPU memory I/O without materializing the full N x N matrix in HBM.',
-    codeSnippet: `// Standard Scaled Dot-Product Attention:
-attention_scores = (Q @ K.T) / math.sqrt(d_k)
-attention_weights = softmax(attention_scores, dim=-1)
-output = attention_weights @ V // O(N^2) memory!`,
+    keyTakeaway: 'Common ERP software eliminates bookkeeping lags and opens 25+ new revenue lines for village cooperatives.',
+    codeSnippet: `// Standard Daily Cash Balance Check:
+Total_Daily_Receipts - Total_Daily_Disbursements == Closing_Cash_In_Safe;
+// Auto-synced to District Central Cooperative Bank (DCCB) nightly!`,
     interactiveQuiz: {
-      question: 'If a sequence has 4,000 tokens, what is the size of the attention score matrix?',
-      options: ['4,000 elements', '16 Million elements', '8,000 elements', '64,000 elements'],
-      correctIndex: 1,
-      explanation: 'N x N = 4,000 x 4,000 = 16,000,000 matrix elements!'
+      question: 'How many operational PACS are being onboarded onto the National Common ERP software?',
+      options: ['1,000', '10,000', '63,000+', '500'],
+      correctIndex: 2,
+      explanation: 'Over 63,000 functional PACS across India are being modernized under the National PACS Computerization project.'
     }
   },
   {
     id: 'ed_02',
     order: 2,
-    creatorName: 'Dr. Rajesh Verma',
-    creatorRole: 'Professor of Computer Science',
-    creatorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
-    title: '2. The Secret Behind Raft Consensus',
-    description: 'Distributed systems cannot trust a single clock. Raft decomposes consensus into Leader Election, Log Replication, and Safety invariants. The elected leader handles all client writes and broadcasts heartbeats.',
-    tag: '#SystemDesign',
-    category: 'System Design',
-    readTime: '60s Reel',
-    likesCount: 980,
-    sharesCount: 215,
-    isLiked: false,
+    creatorName: 'Dr. Anand Kurien (NDDB)',
+    creatorRole: 'Dairy Cooperative Scientist',
+    creatorAvatar: 'https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?w=100&auto=format&fit=crop&q=80',
+    title: '2. The 4°C Golden Rule in Dairy Cold Chains',
+    description: 'When milk is collected at the village society, bacteria double every 20 minutes at 30°C! Chilling milk to 4°C within 3 hours in a Bulk Milk Cooler (BMC) puts bacteria into dormant state, preserving fat structure and boosting producer earnings.',
+    tag: '#DairyTechnology',
+    category: 'Dairy',
+    readTime: '50s Reel',
+    likesCount: 1820,
+    sharesCount: 410,
+    isLiked: true,
     isCompleted: true,
     isLocked: false,
-    keyTakeaway: 'A Raft cluster of 2F + 1 nodes tolerates F simultaneous node crashes without losing writes.',
-    codeSnippet: `// Raft Heartbeat check:
-if (currentTerm > lastKnownTerm) {
-  role = Follower;
-  acknowledgedLeader = leaderId;
-}`,
+    keyTakeaway: 'Rapid chilling to 4°C halts bacterial proliferation and protects milk freshness for up to 48 hours.',
     interactiveQuiz: {
-      question: 'How many node failures can a 5-node Raft cluster tolerate while remaining operational?',
-      options: ['1 node', '2 nodes', '3 nodes', '4 nodes'],
-      correctIndex: 1,
-      explanation: 'With 2F + 1 = 5, F = 2. A majority of 3 nodes is required for quorum.'
+      question: 'What is the maximum ideal temperature for raw milk storage in a Village Bulk Milk Cooler?',
+      options: ['18°C', '12°C', '4°C', '25°C'],
+      correctIndex: 2,
+      explanation: '4°C is the internationally certified chilling temperature for maintaining raw milk grade.'
     }
   },
   {
     id: 'ed_03',
     order: 3,
-    creatorName: 'Career Foundry AI',
-    creatorRole: 'Talent Acceleration Lead',
-    creatorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
-    title: '3. STAR Method for Tech Behavioral Rounds',
-    description: 'Structure behavioral answers into Situation (20%), Task (10%), Action (50%), and Result (20% with quantitative metrics). Always highlight your specific execution decisions.',
-    tag: '#InterviewHacks',
-    category: 'Career Hacks',
-    readTime: '30s Reel',
-    likesCount: 2310,
-    sharesCount: 654,
+    creatorName: 'Fintech Rural Cell',
+    creatorRole: 'Digital Payments Specialist',
+    creatorAvatar: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?w=100&auto=format&fit=crop&q=80',
+    title: '3. Why KCC Prompt Repayments yield 4% Effective Interest',
+    description: 'The standard bank loan rate is 9%. The Central Government grants a 2% interest subvention, bringing it to 7%. For farmers who repay on or before the due date, an additional 3% Prompt Repayment Incentive (PRI) is awarded, slashing the net interest to just 4% per year!',
+    tag: '#RuralFinance',
+    category: 'Finance',
+    readTime: '40s Reel',
+    likesCount: 3100,
+    sharesCount: 920,
     isLiked: true,
     isCompleted: true,
     isLocked: false,
-    keyTakeaway: 'Focus 50% of your time explaining the technical actions YOU personally took.',
+    keyTakeaway: 'Prompt repayment saves farmers more than 50% on interest costs under the Kisan Credit Card scheme.',
     interactiveQuiz: {
-      question: 'Which component of the STAR method should consume the majority of your speaking time?',
-      options: ['Situation', 'Task', 'Action', 'Result'],
-      correctIndex: 2,
-      explanation: 'The Action section showcases your technical decision-making directly!'
+      question: 'What is the prompt repayment incentive (PRI) rebate for timely KCC borrowers?',
+      options: ['1%', '3%', '5%', '10%'],
+      correctIndex: 1,
+      explanation: 'Borrowers who repay crop loans on time receive an extra 3% rebate from the Government.'
     }
   },
   {
     id: 'ed_04',
     order: 4,
-    creatorName: 'Elena Rostova',
-    creatorRole: 'Web3 Core Contributor',
-    creatorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
-    title: '4. Zero Knowledge Proofs in 45 Seconds',
-    description: 'Proving you possess a secret without leaking the secret. ZK-SNARKs enable complex computations to be executed off-chain while producing tiny, easily verified proofs on-chain.',
-    tag: '#Web3',
-    category: 'Web3',
-    readTime: '45s Reel',
-    likesCount: 1890,
-    sharesCount: 440,
+    creatorName: 'Agri-Tech Mission',
+    creatorRole: 'e-NAM Coordinator',
+    creatorAvatar: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=100&auto=format&fit=crop&q=80',
+    title: '4. How e-NAM Unlocks Pan-India Buyers for Farmers',
+    description: 'Instead of being locked into a single village mandi with 3 local traders, e-NAM allows farmers to get their produce scientifically tested (moisture, foreign matter, grain size) and bid on by 2 Lakh+ registered buyers across India!',
+    tag: '#AgriMarketing',
+    category: 'Agriculture',
+    readTime: '55s Reel',
+    likesCount: 1540,
+    sharesCount: 360,
     isCompleted: true,
     isLocked: false,
-    keyTakeaway: 'ZK proofs guarantee privacy while maintaining complete mathematical verifiability.',
+    keyTakeaway: 'Scientific assaying combined with electronic pan-India bidding ensures maximum price realization.',
     interactiveQuiz: {
-      question: 'What does the "Z" in ZK-SNARK stand for?',
-      options: ['Zero Knowledge', 'Zone Kernel', 'Zip Knapsack', 'Zepto Kinetic'],
-      correctIndex: 0,
-      explanation: 'Zero Knowledge ensures no private data is revealed to the verifier.'
+      question: 'What is the primary prerequisite before a farmer lot is listed for online bidding on e-NAM?',
+      options: ['Paying a cash deposit', 'Quality Assaying & Lot Grading', 'Owning 10 acres of land', 'Buying special software'],
+      correctIndex: 1,
+      explanation: 'Quality assaying provides objective grade standards that remote online buyers can trust.'
     }
   },
   {
     id: 'ed_05',
     order: 5,
-    creatorName: 'Dr. Rajesh Verma',
-    creatorRole: 'Professor of Computer Science',
+    creatorName: 'Dr. Meenakshi Sundaram',
+    creatorRole: 'Senior Faculty (VAMNICOM)',
     creatorAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
-    title: '5. Residual Connections & Gradient Vanishing',
-    description: 'Why can modern ResNets train with 152 layers while plain networks die at 20 layers? The skip connection F(x) + x provides a direct identity gradient highway where d(x)/dx = 1, completely preventing gradient vanishing!',
-    tag: '#DeepLearning',
-    category: 'AI/ML',
-    readTime: '55s Reel',
-    likesCount: 3104,
-    sharesCount: 780,
+    title: '5. Double Entry Balancing in Cooperative Day-Books',
+    description: 'Every rupee entering or leaving the society must balance: Total Debits = Total Credits. When disbursing a crop loan of ₹50,000, debit Member Crop Loan Account and credit Cash/Bank Account. Never mix reserve fund investments with operational cash!',
+    tag: '#CoopAccounting',
+    category: 'Cooperative',
+    readTime: '60s Reel',
+    likesCount: 2890,
+    sharesCount: 710,
     isCompleted: false,
     isLocked: false,
     checkpointRequired: true,
-    keyTakeaway: 'Identity shortcut gradients d(F(x)+x)/dx = dF/dx + 1 ensure the signal never shrinks to 0.',
-    codeSnippet: `class ResBlock(nn.Module):
-    def forward(self, x):
-        return F.relu(self.conv2(self.conv1(x)) + x) // +x identity highway`,
+    keyTakeaway: 'Strict separation of Statutory Reserve Funds from daily operational cash ensures financial solvency.',
+    codeSnippet: `// Daily Journal Voucher entry:
+Debit: Member_Loan_Ledger (Asset Increase) ₹50,000
+Credit: Bank_Disbursement_Account (Asset Decrease) ₹50,000`,
     interactiveQuiz: {
-      question: 'What is the derivative of the identity addition term x with respect to x?',
-      options: ['0', '1', 'x', 'W'],
-      correctIndex: 1,
-      explanation: 'dx/dx = 1, ensuring a non-zero gradient term always flows backwards!'
+      question: 'When a member repays principal loan with cash, how is it recorded in the day-book?',
+      options: [
+        'Debit Cash, Credit Member Loan Account',
+        'Credit Cash, Debit Member Loan Account',
+        'Debit Profit & Loss, Credit Reserve Fund',
+        'Credit Dividend Account, Debit Bank'
+      ],
+      correctIndex: 0,
+      explanation: 'Cash increases (Debit Asset), while outstanding Loan Receivable decreases (Credit Asset).'
     }
   },
   {
     id: 'ed_06',
     order: 6,
-    creatorName: 'Algorithmic Systems Lab',
-    creatorRole: 'Lead Architect',
-    creatorAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
-    title: '6. Dinic Max-Flow Algorithm in Level Graphs',
-    description: 'Ford-Fulkerson can be slow with bad augmenting paths. Dinic constructs a Level Graph using BFS in O(E), then finds blocking flows using DFS in O(VE), achieving an optimal total bound of O(V²E)!',
-    tag: '#Algorithms',
-    category: 'Algorithms',
+    creatorName: 'Rural Cyber Guardian',
+    creatorRole: 'Digital Security Trainer',
+    creatorAvatar: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=100&auto=format&fit=crop&q=80',
+    title: '6. Spotting Biometric Spoofing in AePS Cash Outlets',
+    description: 'Micro-ATM and AePS operators must always enable Liveness Detection on fingerprint scanners. Never accept pre-recorded silicone casts or allow customers to sign blank withdrawal slips. Always verify SMS confirmation before handing over physical currency.',
+    tag: '#CyberHygiene',
+    category: 'Digital',
     readTime: '50s Reel',
-    likesCount: 1220,
-    sharesCount: 198,
+    likesCount: 1980,
+    sharesCount: 520,
     isCompleted: false,
     isLocked: true,
-    keyTakeaway: 'Level graphs prevent cycles and guarantee monotonic path length expansion.',
-    codeSnippet: `// Dinic BFS Layer construction
-while (!q.empty()) {
-  int u = q.front(); q.pop();
-  for (Edge& e : adj[u]) {
-    if (e.capacity > e.flow && level[e.v] == -1) {
-      level[e.v] = level[u] + 1;
-      q.push(e.v);
-    }
-  }
-}`,
+    keyTakeaway: 'Live biometric verification and transaction SMS verification protect both customer and PACS secretary.',
     interactiveQuiz: {
-      question: 'Which graph traversal is used by Dinic algorithm to construct the level graph?',
-      options: ['DFS', 'BFS', 'Dijkstra', 'Topological Sort'],
+      question: 'What should the operator verify BEFORE handing cash to an AePS customer?',
+      options: [
+        'Only oral agreement',
+        'Success status on screen and transaction reference ID receipt',
+        'Customer signature on blank sheet',
+        'Ask the customer to come back tomorrow'
+      ],
       correctIndex: 1,
-      explanation: 'Breadth-First Search (BFS) is used to calculate shortest distance levels from source.'
+      explanation: 'Physical cash should only be disbursed after the POS terminal confirms Success and prints/shows the reference ID.'
     }
   }
 ];
 
 export const mockQuizCheckpoint: QuizCheckpoint = {
-  id: 'checkpoint_01',
-  title: 'Section 1 Checkpoint: Core AI & Systems Competency',
+  id: 'checkpoint_ncct_01',
+  title: 'Section 1 Checkpoint: Core Cooperative & Rural Financial Competency',
   requiredAfterLessonOrder: 5,
   unlocked: true,
   passed: false,
   questions: [
     {
       id: 'cp_q1',
-      question: 'Why does FlashAttention drastically accelerate Transformer training?',
+      question: 'Under the National PACS Computerization project, what is the mandated accounting method for all societies?',
       options: [
-        'It reduces the theoretical O(N^2) complexity to O(N)',
-        'It tiles the Softmax computation to maximize GPU SRAM usage and minimize High-Bandwidth Memory I/O',
-        'It skips attention computation for every odd token',
-        'It compresses float32 weights into int4 quantization'
+        'Single entry cash system on paper',
+        'Accrual-based double-entry bookkeeping on National Common ERP',
+        'No accounting required for small PACS',
+        'Informal ledger managed by local committee'
       ],
       correctIndex: 1,
-      explanation: 'FlashAttention is an exact attention algorithm that restructures operations using GPU SRAM tiling without materializing the N x N attention matrix.'
+      explanation: 'Accrual-based double-entry bookkeeping on standardized ERP provides transparency and direct integration with NABARD and state cooperative banks.'
     },
     {
       id: 'cp_q2',
-      question: 'In a 7-node Raft cluster, what is the minimum quorum required to commit a log entry?',
-      options: ['3 nodes', '4 nodes', '5 nodes', '7 nodes'],
-      correctIndex: 1,
-      explanation: 'Quorum is floor(N / 2) + 1 = floor(7 / 2) + 1 = 4 nodes.'
+      question: 'What is the required milk chilling temperature in Bulk Milk Coolers (BMCs) to prevent souring?',
+      options: ['15°C', '10°C', '4°C or below', '25°C'],
+      correctIndex: 2,
+      explanation: 'Chilling to 4°C within 3 hours stops bacterial growth and protects quality.'
     },
     {
       id: 'cp_q3',
-      question: 'How do residual skip connections resolve the vanishing gradient problem?',
-      options: [
-        'They double the learning rate at deeper layers',
-        'They add an identity shortcut term x whose derivative is 1, preserving backpropagated gradient magnitude',
-        'They replace all non-linear activation functions with Linear transforms',
-        'They eliminate negative weight matrices'
-      ],
-      correctIndex: 1,
-      explanation: 'The derivative d(F(x) + x)/dx = dF/dx + 1. The constant +1 guarantees gradient flow even when dF/dx approaches 0.'
+      question: 'What is the effective interest rate on short-term crop loans up to ₹3 Lakh when a farmer repays on time?',
+      options: ['9%', '7%', '4%', '0%'],
+      correctIndex: 2,
+      explanation: '7% minus 3% Prompt Repayment Incentive (PRI) equals 4% net interest rate.'
     }
   ]
 };
 
 export const mockSmartAttendanceSession: SmartAttendanceSession = {
-  code: '849 201',
-  subject: 'CS602: Deep Learning & Neural Networks',
-  batch: 'CSE-A (Semester 6)',
-  classroom: 'Lab 402 (NVIDIA AI Center)',
+  code: 'NCCT-8492',
+  subject: 'COOP-101: Cooperative Management & PACS Governance',
+  batch: 'HDCM Batch 2025-2026 (Sem 2)',
+  classroom: 'Seminar Hall 1 (VAMNICOM / RICM Campus)',
   expiresInSeconds: 300,
   isActive: true,
   securityRequirements: {
@@ -389,53 +942,44 @@ export const mockSmartAttendanceSession: SmartAttendanceSession = {
     campusWifi: true,
     faceScanBiometrics: true
   },
-  verifiedCount: 42,
-  totalEnrolled: 64
+  verifiedCount: 38,
+  totalEnrolled: 44
 };
 
 export const mockGDRooms: GDRoom[] = [
   {
     id: 'gd_01',
-    topic: 'Is AGI Feasible with Current Transformer & LLM Scaling Laws?',
-    category: 'Artificial Intelligence',
-    description: 'Analyze whether brute-force compute scaling, synthetic data, and reasoning RL are sufficient to reach artificial general intelligence.',
+    topic: 'Can Multi-Purpose PACS Solve Rural Youth Unemployment?',
+    category: 'Cooperative Governance',
+    description: 'Analyze how diversifying PACS into drone spraying hubs, Common Service Centers, consumer retail, and cold storage creates direct technical jobs for rural youth.',
     status: 'in-progress',
     timeRemainingSeconds: 480,
     participants: [
       {
-        id: 'p_ananya',
-        name: 'Ananya Sharma (You)',
+        id: 'p_rajesh',
+        name: 'Rajesh Kumar Patel (You)',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
         role: 'student',
         isSpeaking: false,
-        speakingTimeSeconds: 45,
-        contributionScore: 88
+        speakingTimeSeconds: 52,
+        contributionScore: 92
       },
       {
-        id: 'p_rohan',
-        name: 'Rohan Deshmukh',
-        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
-        role: 'ai-peer',
-        isSpeaking: true,
-        speakingTimeSeconds: 62,
-        contributionScore: 84
-      },
-      {
-        id: 'p_aisha',
-        name: 'Aisha Khan',
+        id: 'p_priya',
+        name: 'Priya Sharma (RICM Lucknow)',
         avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
         role: 'ai-peer',
-        isSpeaking: false,
-        speakingTimeSeconds: 38,
-        contributionScore: 79
+        isSpeaking: true,
+        speakingTimeSeconds: 68,
+        contributionScore: 86
       },
       {
         id: 'p_mod',
-        name: 'CoLearn AI Moderator',
-        avatar: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop&q=80',
+        name: 'NCCT AI Discussion Moderator',
+        avatar: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=100&auto=format&fit=crop&q=80',
         role: 'moderator',
         isSpeaking: false,
-        speakingTimeSeconds: 20,
+        speakingTimeSeconds: 24,
         contributionScore: 99
       }
     ],
@@ -443,74 +987,64 @@ export const mockGDRooms: GDRoom[] = [
       {
         id: 'm1',
         participantId: 'p_mod',
-        participantName: 'CoLearn AI Moderator',
-        text: 'Welcome to GD Room #104. Each participant has up to 90 seconds per speech block. Rohan Deshmukh currently has the floor.',
-        timestamp: '14:02',
+        participantName: 'NCCT AI Moderator',
+        text: 'Welcome to Cooperative Leadership GD #204. Each participant has 90 seconds to present economic rationale.',
+        timestamp: '14:00',
         type: 'ai-prompt'
       },
       {
         id: 'm2',
-        participantId: 'p_rohan',
-        participantName: 'Rohan Deshmukh',
-        text: 'I argue that scaling compute and parameter count is hitting a data wall. Synthetic data introduces mode collapse unless grounded in verifiable search environments like test-time compute in OpenAI o1.',
-        timestamp: '14:03',
+        participantId: 'p_priya',
+        participantName: 'Priya Sharma',
+        text: 'PACS model bye-laws now permit CSC operations and Jan Aushadhi generic pharmacy stores, turning every village credit society into a multi-revenue employer.',
+        timestamp: '14:02',
         type: 'speech',
         sentiment: 'constructive'
       }
     ],
     moderatorScore: {
-      articulation: 86,
-      factualBacking: 90,
-      collaborativeListening: 84,
+      articulation: 90,
+      factualBacking: 94,
+      collaborativeListening: 88,
       overallGrade: 'A+'
     }
-  },
-  {
-    id: 'gd_02',
-    topic: 'Centralized vs Decentralized Cloud: Where will 2030 Compute Reside?',
-    category: 'Cloud & Web3',
-    description: 'Explore the trade-offs between hyperscalers (AWS, Azure) and decentralized GPU clusters for edge inference.',
-    status: 'waiting',
-    timeRemainingSeconds: 900,
-    participants: [],
-    messages: []
   }
 ];
 
 export const mockInterviewQuestions: InterviewQuestion[] = [
   {
     id: 'iq_01',
-    question: 'How does Multi-Head Attention allow a model to jointly attend to information from different representation subspaces?',
-    category: 'Deep Learning Core',
+    question: 'How do you handle a situation where a loan applicant in a PACS has an overdue balance in a commercial bank (CIBIL default)?',
+    category: 'Cooperative Banking & Credit',
     targetDurationSeconds: 90,
-    sampleAnswerSummary: 'Multiple projection heads linearly map Query, Key, and Value into distinct d_k dimensional subspaces, enabling parallel focus on syntax, semantics, and distance.',
+    sampleAnswerSummary: 'Check whether the default is wilful or due to genuine crop failure. Verify state debt relief status, discuss restructuring under RBI guidelines, and evaluate collateral/guarantees before presenting to the PACS Loan Sub-Committee.',
     rubric: {
       technicalAccuracy: 95,
+      communicationClarity: 92,
+      problemSolvingStructure: 94
+    }
+  },
+  {
+    id: 'iq_02',
+    question: 'Explain the protocol for testing milk quality and detecting urea or starch adulteration at a village dairy collection center.',
+    category: 'Dairy Operations & Hygiene',
+    targetDurationSeconds: 90,
+    sampleAnswerSummary: 'Conduct organoleptic test, Lactometer density test (SNF), Gerber acid butyrometer test (Fat), and apply iodine reagent for starch detection and DMAB reagent for urea. Reject contaminated milk immediately.',
+    rubric: {
+      technicalAccuracy: 94,
       communicationClarity: 90,
       problemSolvingStructure: 92
     }
   },
   {
-    id: 'iq_02',
-    question: 'Describe how you would debug a CUDA Out of Memory (OOM) error occurring during PyTorch distributed training.',
-    category: 'ML Engineering & Systems',
+    id: 'iq_03',
+    question: 'What steps would you take to promote digital adoption of AePS and UPI in a remote tribal village with low literacy?',
+    category: 'Financial Inclusion & Communication',
     targetDurationSeconds: 90,
-    sampleAnswerSummary: 'Check batch size, enable activation checkpointing (gradient checkpointing), apply mixed precision (torch.cuda.amp), and profile using torch.cuda.memory_summary().',
+    sampleAnswerSummary: 'Conduct hands-on live demonstrations in weekly haats (village markets), utilize local language audio prompts (UPI 123Pay), train SHG Bank Sakhis as trusted ambassadors, and educate members on biometric fraud prevention.',
     rubric: {
       technicalAccuracy: 92,
-      communicationClarity: 88,
-      problemSolvingStructure: 94
-    }
-  },
-  {
-    id: 'iq_03',
-    question: 'Explain the difference between Strong Consistency and Eventual Consistency in distributed databases using PACELC theorem.',
-    category: 'Distributed Systems',
-    targetDurationSeconds: 90,
-    sampleAnswerSummary: 'PACELC states that in a partitioned system one chooses between Availability and Consistency, else between Latency and Consistency.',
-    rubric: {
-      technicalAccuracy: 90,
-      communicationClarity: 86,
+      communicationClarity: 96,
       problemSolvingStructure: 90
     }
   }
@@ -519,81 +1053,68 @@ export const mockInterviewQuestions: InterviewQuestion[] = [
 export const mockTimetable: TimetableEntry[] = [
   {
     id: 'tt_01',
-    subject: 'Deep Learning & Neural Networks',
-    code: 'CS602',
-    instructor: 'Dr. Rajesh Verma',
-    classroom: 'Lab 402 (NVIDIA AI Center)',
-    batch: 'CSE-A',
+    subject: 'Cooperative Management & PACS Governance',
+    code: 'COOP-101',
+    instructor: 'Dr. Meenakshi Sundaram',
+    classroom: 'Hall 1 (Academic Block A)',
+    batch: 'HDCM Batch 2025-2026',
     day: 'Monday',
     startTime: '09:00 AM',
     endTime: '10:30 AM',
-    type: 'Lab',
+    type: 'Lecture',
     isLiveNow: true,
-    meetingLink: 'https://meet.colearn.edu.in/cs602-lab',
+    meetingLink: 'https://meet.ncct.gov.in/coop101',
     attendanceMarked: false
   },
   {
     id: 'tt_02',
-    subject: 'Distributed Systems',
-    code: 'CS604',
-    instructor: 'Prof. Sunita Pillai',
-    classroom: 'LH-301',
-    batch: 'CSE-A',
+    subject: 'PACS Computerization & ERP Lab',
+    code: 'COOP-102',
+    instructor: 'Prof. Harish Chandra',
+    classroom: 'Computer Lab 2 (RICM Campus)',
+    batch: 'HDCM Batch 2025-2026',
     day: 'Monday',
     startTime: '11:00 AM',
     endTime: '12:30 PM',
-    type: 'Lecture',
+    type: 'Lab',
     isLiveNow: false
   },
   {
     id: 'tt_03',
-    subject: 'Advanced Graph Algorithms',
-    code: 'CS601',
-    instructor: 'Dr. Rajesh Verma',
-    classroom: 'LH-102',
-    batch: 'CSE-A',
-    day: 'Monday',
+    subject: 'Dairy Cold-Chain & Quality Control',
+    code: 'DAIRY-402',
+    instructor: 'Dr. Anand Kurien',
+    classroom: 'Dairy Demonstration Center',
+    batch: 'HDCM Batch 2025-2026',
+    day: 'Tuesday',
+    startTime: '09:30 AM',
+    endTime: '11:00 AM',
+    type: 'Lab',
+    isLiveNow: false
+  },
+  {
+    id: 'tt_04',
+    subject: 'Financial Literacy & Micro-Credit',
+    code: 'FIN-201',
+    instructor: 'Shri Arvind Joshi',
+    classroom: 'Hall 2 (Finance Wing)',
+    batch: 'HDCM Batch 2025-2026',
+    day: 'Wednesday',
     startTime: '02:00 PM',
     endTime: '03:30 PM',
     type: 'Lecture',
     isLiveNow: false
   },
   {
-    id: 'tt_04',
-    subject: 'Career Lab: Mock Technical Interview',
-    code: 'EMP102',
-    instructor: 'Industry Mentor Panel',
-    classroom: 'Virtual Studio 2',
-    batch: 'CSE-A',
-    day: 'Tuesday',
-    startTime: '10:00 AM',
-    endTime: '11:30 AM',
-    type: 'Seminar',
-    isLiveNow: false
-  },
-  {
     id: 'tt_05',
-    subject: 'Software Engineering & Cloud Deployments',
-    code: 'SE302',
-    instructor: 'Er. Kevin Vance',
-    classroom: 'Computing Lab 3',
-    batch: 'CSE-A',
-    day: 'Wednesday',
-    startTime: '09:00 AM',
-    endTime: '11:00 AM',
-    type: 'Lab',
-    isLiveNow: false
-  },
-  {
-    id: 'tt_06',
-    subject: 'AI Mini-Project Mentorship Review',
-    code: 'PRJ601',
-    instructor: 'Dr. Rajesh Verma',
-    classroom: 'Conference Hall A',
-    batch: 'CSE-A',
+    subject: 'Field Attachment: District Central Cooperative Bank (DCCB)',
+    code: 'FLD-501',
+    instructor: 'DCCB Lead Mentor Panel',
+    classroom: 'DCCB Main Branch',
+    batch: 'HDCM Batch 2025-2026',
     day: 'Friday',
-    startTime: '03:00 PM',
-    endTime: '05:00 PM',
+    startTime: '10:00 AM',
+    endTime: '04:00 PM',
     type: 'Assessment',
     isLiveNow: false
   }
@@ -601,158 +1122,232 @@ export const mockTimetable: TimetableEntry[] = [
 
 export const mockAttendanceRecords: AttendanceSubject[] = [
   {
-    subjectCode: 'CS602',
-    subjectName: 'Deep Learning & Neural Networks',
-    facultyName: 'Dr. Rajesh Verma',
+    subjectCode: 'COOP-101',
+    subjectName: 'Cooperative Management & PACS Governance',
+    facultyName: 'Dr. Meenakshi Sundaram',
+    totalClasses: 32,
+    attendedClasses: 31,
+    percentage: 96.8,
+    status: 'safe',
+    lastClassDate: 'Today, 09:00 AM (Live)'
+  },
+  {
+    subjectCode: 'COOP-102',
+    subjectName: 'PACS Computerization & ERP Lab',
+    facultyName: 'Prof. Harish Chandra',
     totalClasses: 28,
     attendedClasses: 27,
     percentage: 96.4,
     status: 'safe',
-    lastClassDate: 'Today, 09:00 AM'
-  },
-  {
-    subjectCode: 'CS604',
-    subjectName: 'Distributed Systems Architecture',
-    facultyName: 'Prof. Sunita Pillai',
-    totalClasses: 24,
-    attendedClasses: 22,
-    percentage: 91.6,
-    status: 'safe',
     lastClassDate: 'Yesterday, 11:00 AM'
   },
   {
-    subjectCode: 'CS601',
-    subjectName: 'Advanced Graph Algorithms',
-    facultyName: 'Dr. Rajesh Verma',
-    totalClasses: 26,
-    attendedClasses: 24,
-    percentage: 92.3,
+    subjectCode: 'FIN-201',
+    subjectName: 'Financial Literacy & SHG Banking',
+    facultyName: 'Shri Arvind Joshi',
+    totalClasses: 24,
+    attendedClasses: 23,
+    percentage: 95.8,
     status: 'safe',
     lastClassDate: '28 Aug 2026'
   },
   {
-    subjectCode: 'SE302',
-    subjectName: 'Production Web Engineering',
-    facultyName: 'Er. Kevin Vance',
-    totalClasses: 20,
-    attendedClasses: 17,
-    percentage: 85.0,
+    subjectCode: 'DAIRY-402',
+    subjectName: 'Dairy Quality Testing & Cold Chain',
+    facultyName: 'Dr. Sunita Pillai',
+    totalClasses: 22,
+    attendedClasses: 20,
+    percentage: 90.9,
     status: 'safe',
     lastClassDate: '26 Aug 2026'
   },
   {
-    subjectCode: 'ENV201',
-    subjectName: 'Environmental Studies & Sustainability',
-    facultyName: 'Dr. Meenakshi Sundaram',
+    subjectCode: 'DIG-603',
+    subjectName: 'Cybersecurity & Cyber Hygiene for Rural Banking',
+    facultyName: 'Dr. Rajesh Verma',
     totalClasses: 18,
-    attendedClasses: 13,
-    percentage: 72.2,
-    status: 'warning',
-    lastClassDate: '25 Aug 2026'
+    attendedClasses: 16,
+    percentage: 88.8,
+    status: 'safe',
+    lastClassDate: '24 Aug 2026'
   }
 ];
 
 export const mockSkillPassportData: SkillCredential[] = [
   {
-    id: 'cred_01',
-    title: 'Certified PyTorch Deep Learning Specialist',
-    issuer: 'CoLearn x National AI Mission',
-    issueDate: 'August 14, 2026',
-    verificationHash: '0x8f7d...4a12ec9',
-    badgeUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&auto=format&fit=crop&q=80',
-    score: 94,
-    skills: ['PyTorch', 'CNNs', 'Transfer Learning', 'Backpropagation Calculus'],
-    creditsAllocated: 3,
-    status: 'verified'
-  },
-  {
-    id: 'cred_02',
-    title: 'Advanced Graph Algorithms & Data Structures',
-    issuer: 'NIT Academic Council & CoLearn',
-    issueDate: 'July 28, 2026',
-    verificationHash: '0x3c2a...9b48e11',
-    badgeUrl: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=100&auto=format&fit=crop&q=80',
-    score: 89,
-    skills: ['Dynamic Programming', 'Flow Networks', 'Bipartite Matching', 'NP Reductions'],
+    id: 'cred_ncct_01',
+    title: 'Certified PACS Secretary & Rural ERP Specialist',
+    issuer: 'National Council for Cooperative Training (NCCT) & Ministry of Cooperation',
+    issueDate: 'August 18, 2026',
+    verificationHash: '0xNCCT-PACS-8942-B8E9',
+    badgeUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=100&auto=format&fit=crop&q=80',
+    score: 96,
+    skills: ['PACS National ERP', 'Double Entry Bookkeeping', 'Model Bye-Laws', 'Registrar Audit Compliance'],
     creditsAllocated: 4,
     status: 'verified'
   },
   {
-    id: 'cred_03',
-    title: 'Enterprise React & TypeScript Architect',
-    issuer: 'Frontend Guild Verified',
-    issueDate: 'June 10, 2026',
-    verificationHash: '0x11a9...7f53cb2',
-    badgeUrl: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=100&auto=format&fit=crop&q=80',
-    score: 96,
-    skills: ['React 19', 'TypeScript', 'Tailwind CSS', 'State Management'],
-    creditsAllocated: 2,
+    id: 'cred_ncct_02',
+    title: 'Dairy Cooperative Quality & Cold-Chain Supervisor',
+    issuer: 'NCCT x National Dairy Development Board (NDDB)',
+    issueDate: 'July 24, 2026',
+    verificationHash: '0xNDDB-DAIRY-7741-98AF',
+    badgeUrl: 'https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?w=100&auto=format&fit=crop&q=80',
+    score: 91,
+    skills: ['Bulk Milk Cooler (BMC) Maintenance', 'MBRT & Fat/SNF Testing', 'Anand Pattern Procurement'],
+    creditsAllocated: 3,
     status: 'verified'
   },
   {
-    id: 'cred_04',
-    title: 'Distributed Systems & Cloud Fault Tolerance',
-    issuer: 'CoLearn Cloud Consortium',
-    issueDate: 'In Progress (Target: Oct 2026)',
-    verificationHash: '0xPENDING_AUDIT',
-    badgeUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=100&auto=format&fit=crop&q=80',
-    score: 76,
-    skills: ['Raft Protocol', 'Kafka Streaming', 'Sharding Strategies'],
+    id: 'cred_ncct_03',
+    title: 'Rural Micro-Banking & AePS Financial Inclusion Lead',
+    issuer: 'VAMNICOM x NABARD Financial Inclusion Mission',
+    issueDate: 'June 15, 2026',
+    verificationHash: '0xNABARD-FIN-1284-CA55',
+    badgeUrl: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?w=100&auto=format&fit=crop&q=80',
+    score: 94,
+    skills: ['Micro-ATM Operation', 'SHG Credit Appraisal', 'KCC Subvention Calculation', 'Cyber Hygiene'],
     creditsAllocated: 3,
+    status: 'verified'
+  },
+  {
+    id: 'cred_ncct_04',
+    title: 'Agri-Business Planning & FPO Executive Certification',
+    issuer: 'Regional Institute of Cooperative Management (RICM)',
+    issueDate: 'Target: October 2026 (In Progress)',
+    verificationHash: '0xPENDING-RICM-AUDIT',
+    badgeUrl: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=100&auto=format&fit=crop&q=80',
+    score: 82,
+    skills: ['FPO DPR Formulation', 'e-NAM Trading', 'Post-Harvest Loss Prevention'],
+    creditsAllocated: 4,
     status: 'in-progress'
   }
 ];
 
 export const mockCareerJobs: JobOpportunity[] = [
   {
-    id: 'job_01',
-    title: 'AI/ML Engineering Intern (Foundational Models)',
-    company: 'NeuralScale Technologies',
-    logo: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=80&auto=format&fit=crop&q=80',
-    location: 'Bengaluru, India (Hybrid)',
-    type: 'Internship',
-    stipendOrSalary: '₹60,000 - ₹85,000 / month',
-    skillMatchPercentage: 94,
-    matchedSkills: ['PyTorch', 'Transformers', 'Python', 'Attention Models'],
-    missingSkills: ['Triton GPU Kernels'],
-    applyDeadline: 'Sept 15, 2026',
-    description: 'Work with our foundational AI team fine-tuning multi-modal diffusion and large language models on distributed GPU clusters.'
-  },
-  {
-    id: 'job_02',
-    title: 'Graduate Software Engineer (High Performance Systems)',
-    company: 'OptiRoute Systems',
-    logo: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=80&auto=format&fit=crop&q=80',
-    location: 'Hyderabad, India (On-site)',
+    id: 'job_coop_01',
+    title: 'PACS Secretary & Multi-Service Business Manager',
+    company: 'District Cooperative Central Union (Kolar / Bengaluru Rural)',
+    logo: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=80&auto=format&fit=crop&q=80',
+    location: 'Karnataka (Multiple Districts) • Full-time',
     type: 'Full-time',
-    stipendOrSalary: '₹18,00,000 - ₹24,00,000 / annum',
-    skillMatchPercentage: 88,
-    matchedSkills: ['Algorithms', 'Data Structures', 'System Design', 'C++ / Rust'],
-    missingSkills: ['Low-latency IPC'],
-    applyDeadline: 'Sept 30, 2026',
-    description: 'Develop next-generation routing pipelines handling millions of concurrent geospatial queries with sub-millisecond latencies.'
+    stipendOrSalary: '₹32,000 - ₹45,000 / month + Performance Incentives',
+    skillMatchPercentage: 94,
+    matchedSkills: ['PACS Computerization & ERP', 'Cooperative Accounting & Audit', 'Model Bye-Laws', 'Gram Sabha Public Communication'],
+    missingSkills: ['WDRA Warehouse E-Receipt Trading'],
+    applyDeadline: 'Sept 25, 2026',
+    description: 'Lead the modernization of a Tier-1 Primary Agricultural Credit Society. Manage the national ERP bookkeeping, disburse seasonal KCC loans, operate the CSC citizen service counter, and manage fertiliser distribution.'
   },
   {
-    id: 'job_03',
-    title: 'Full-Stack Product Engineering Intern',
-    company: 'Credence Fintech',
-    logo: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=80&auto=format&fit=crop&q=80',
-    location: 'Remote (Pan-India)',
-    type: 'Internship',
-    stipendOrSalary: '₹45,000 - ₹60,000 / month',
-    skillMatchPercentage: 92,
-    matchedSkills: ['React', 'TypeScript', 'Tailwind', 'REST APIs'],
-    missingSkills: ['GraphQL Federation'],
+    id: 'job_coop_02',
+    title: 'Dairy Cooperative Plant Supervisor & Milk Procurement Head',
+    company: 'Karnataka Milk Federation (KMF - Nandini / Amul Network)',
+    logo: 'https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?w=80&auto=format&fit=crop&q=80',
+    location: 'Mandya & Mysuru Dairy Union (On-site)',
+    type: 'Full-time',
+    stipendOrSalary: '₹38,000 - ₹52,000 / month',
+    skillMatchPercentage: 88,
+    matchedSkills: ['Dairy Cold-Chain Management', 'AMCU Automation', 'Milk Quality & Hygiene'],
+    missingSkills: ['Automated CIP Cleaning Protocols', 'Somatic Cell Count Quality Testing'],
+    applyDeadline: 'Oct 10, 2026',
+    description: 'Oversee milk collection centers across 28 village dairy societies, ensure Bulk Milk Cooler (BMC) uptime at 4°C, conduct daily Gerber fat testing, and disburse producer bonus payments.'
+  },
+  {
+    id: 'job_coop_03',
+    title: 'Rural Credit Appraisal Officer & Banking Correspondent Lead',
+    company: 'Apex State Cooperative Bank (Apex Bank)',
+    logo: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=80&auto=format&fit=crop&q=80',
+    location: 'Bengaluru / Hassan • Full-time',
+    type: 'Full-time',
+    stipendOrSalary: '₹42,000 - ₹60,000 / month',
+    skillMatchPercentage: 91,
+    matchedSkills: ['Microfinance & SHG Banking', 'KCC Subvention Calculation', 'Cyber Hygiene & AePS Payments'],
+    missingSkills: ['Mortgage Title Deed Search'],
     applyDeadline: 'Oct 05, 2026',
-    description: 'Build responsive financial dashboard micro-frontends with high test coverage and real-time transaction streams.'
+    description: 'Evaluate agricultural credit proposals, monitor Joint Liability Group (JLG) repayment cycles, audit rural branch cash books, and facilitate PMFBY crop insurance claims.'
+  },
+  {
+    id: 'job_coop_04',
+    title: 'FPO Marketing & Value Chain Coordinator',
+    company: 'National Agricultural Cooperative Marketing Federation (NAFED Cluster)',
+    logo: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?w=80&auto=format&fit=crop&q=80',
+    location: 'Pan-India (Regional Hubs) • Full-time',
+    type: 'Full-time',
+    stipendOrSalary: '₹35,000 - ₹48,000 / month',
+    skillMatchPercentage: 82,
+    matchedSkills: ['Agricultural Marketing & e-NAM', 'Rural Entrepreneurship & SHG Models'],
+    missingSkills: ['FPO DPR Formulation', 'Export Quality Certification'],
+    applyDeadline: 'Oct 15, 2026',
+    description: 'Drive market linkage for Farmer Producer Organisations, onboard collective farm harvest onto e-NAM and ONDC, negotiate bulk input supplies with IFFCO and KRIBHCO.'
+  }
+];
+
+export const mockLearningGaps: LearningGapDiagnostic[] = [
+  {
+    id: 'gap_ncct_01',
+    subject: 'COOP-102: Cooperative Accounting & Audit',
+    batch: 'HDCM Batch 2025-2026',
+    topic: 'PACS Double-Entry Reconciliation & Trial Balance Discrepancies',
+    difficultyRating: 'High',
+    strugglingStudentsCount: 14,
+    totalStudents: 44,
+    failureRatePercentage: 31.8,
+    recommendedRemedialAction: 'AI generated 12-minute interactive simulation on balancing day-book cash entries with DCCB core banking ledger.',
+    suggestedResources: [
+      'Interactive PACS Day-Book Ledger Simulator',
+      '5-Question Practice Diagnostic Drill on Cash-in-Safe',
+      'VAMNICOM Explainer Video on Statutory Reserve 25% Allocation'
+    ],
+    status: 'flagged',
+    strugglingStudentList: [
+      { id: 'ncct_std_09', name: 'Suresh Gowda', score: 48, avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&auto=format&fit=crop&q=80' },
+      { id: 'ncct_std_14', name: 'Manjula Devi', score: 54, avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&auto=format&fit=crop&q=80' }
+    ]
+  },
+  {
+    id: 'gap_ncct_02',
+    subject: 'DAIRY-402: Milk Quality Testing & Cold Chain',
+    batch: 'HDCM Batch 2025-2026',
+    topic: 'Somatic Cell Count & Cold-Chain Bacterial Latency',
+    difficultyRating: 'Medium',
+    strugglingStudentsCount: 18,
+    totalStudents: 44,
+    failureRatePercentage: 40.9,
+    recommendedRemedialAction: 'Micro-lesson on California Mastitis Test (CMT) scoring and Bulk Milk Cooler (BMC) temperature logging.',
+    suggestedResources: [
+      'BMC Temperature Log & Rapid Chilling Interactive Model',
+      'Milk Adulteration Reagent Testing Chart (Urea & Starch)'
+    ],
+    status: 'remedial-assigned',
+    strugglingStudentList: [
+      { id: 'ncct_std_09', name: 'Suresh Gowda', score: 52, avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&auto=format&fit=crop&q=80' }
+    ]
+  },
+  {
+    id: 'gap_ncct_03',
+    subject: 'FIN-203: Credit Management & Recovery',
+    batch: 'HDCM Batch 2025-2026',
+    topic: 'Kisan Credit Card (KCC) Scale of Finance & PRI Interest Rebate',
+    difficultyRating: 'Medium',
+    strugglingStudentsCount: 11,
+    totalStudents: 44,
+    failureRatePercentage: 25.0,
+    recommendedRemedialAction: 'EdScroll Reel #3 interactive practice calculation for 2% subvention + 3% prompt repayment incentive.',
+    suggestedResources: [
+      'KCC Loan Calculator Widget (DLTC Scale of Finance)',
+      'NABARD Scheme Handbook 2026'
+    ],
+    status: 'flagged',
+    strugglingStudentList: []
   }
 ];
 
 export const mockNotifications: NotificationItem[] = [
   {
     id: 'nt_01',
-    title: 'Live Lab Session Starting Now',
-    message: 'Deep Learning & Neural Networks lab session with Dr. Rajesh Verma is now open in NVIDIA AI Center. Check in with code 849 201.',
+    title: 'Live Lab Session: Cooperative Management & Bye-Laws',
+    message: 'Morning lecture with Dr. Meenakshi Sundaram is now live in Hall 1. Mark your attendance using Facial Biometric Scanner or QR Check-in.',
     timestamp: '5 mins ago',
     type: 'academic',
     isRead: false,
@@ -761,254 +1356,164 @@ export const mockNotifications: NotificationItem[] = [
   },
   {
     id: 'nt_02',
-    title: 'AI Diagnostic Alert: Attention Needed in ENV201',
-    message: 'Your attendance in Environmental Studies is at 72.2% (below the 75% threshold). 2 upcoming sessions required to restore safe standing.',
+    title: 'High Skill Match: PACS Secretary Opening',
+    message: 'Kolar District Cooperative Union posted "PACS Secretary & Business Manager" with a 94% match to your Skill Passport credentials.',
     timestamp: '2 hours ago',
-    type: 'ai-alert',
+    type: 'career',
     isRead: false,
     priority: 'high',
-    actionUrl: '/student/attendance'
+    actionUrl: '/student/jobs'
   },
   {
     id: 'nt_03',
-    title: 'New High Skill-Match Opportunity',
-    message: 'NeuralScale Technologies posted "AI/ML Engineering Intern" with a 94% match to your Skill Passport.',
+    title: 'AI Diagnostic Notice: Remedial Module Available',
+    message: 'Review your quiz feedback on "Somatic Cell Count in Dairy Milk". Complete the 8-minute micro-module to restore mastery.',
     timestamp: '1 day ago',
-    type: 'career',
+    type: 'ai-alert',
     isRead: true,
     priority: 'normal',
-    actionUrl: '/student/career-lab'
+    actionUrl: '/student/my-learning'
   },
   {
     id: 'nt_04',
-    title: 'Group Discussion Invitation: AGI Feasibility',
-    message: 'You have been matched into GD Room #104. Topic: "Is AGI Feasible with Transformer Scaling?"',
-    timestamp: '1 hour ago',
-    type: 'academic',
-    isRead: false,
-    priority: 'high',
-    actionUrl: '/student/gd'
+    title: 'Hostel Room & Mess Schedule Update',
+    message: 'Your hostel room (Block B - Room 204) allotment for the VAMNICOM executive training session is confirmed.',
+    timestamp: '2 days ago',
+    type: 'system',
+    isRead: true,
+    priority: 'normal',
+    actionUrl: '/student/hostel'
   }
 ];
 
 export const mockBatches: BatchInfo[] = [
   {
-    id: 'batch_cse_a',
-    name: 'CSE-A (Semester 6)',
-    code: 'BTECH-CSE-2022-A',
-    department: 'Computer Science & Engineering',
-    semester: 6,
-    totalStudents: 64,
-    averageAttendance: 91.2,
-    averageGpa: 8.42,
+    id: 'batch_hdcm_2026',
+    name: 'HDCM Batch 2025-2026 (Semester 2)',
+    code: 'NCCT-HDCM-2025-A',
+    department: 'Cooperative Governance & Rural Banking',
+    semester: 2,
+    totalStudents: 44,
+    averageAttendance: 94.2,
+    averageGpa: 8.64,
     healthStatus: 'Excellent',
-    representative: 'Ananya Sharma',
-    nextSessionTime: 'Today, 02:00 PM (Advanced Graph Algorithms)'
+    representative: 'Rajesh Kumar Patel',
+    nextSessionTime: 'Today, 09:00 AM (Cooperative Management)'
   },
   {
-    id: 'batch_ai_ml',
-    name: 'AI-ML Honors Specialization (Year 3)',
-    code: 'HONORS-AIML-Y3',
-    department: 'AI & Data Systems',
-    semester: 6,
-    totalStudents: 48,
-    averageAttendance: 87.5,
-    averageGpa: 8.78,
+    id: 'batch_pacs_exec',
+    name: 'PACS Secretaries Executive Upskilling (Batch 12)',
+    code: 'NCCT-PACS-EXEC-12',
+    department: 'National PACS Computerization Mission',
+    semester: 1,
+    totalStudents: 52,
+    averageAttendance: 91.5,
+    averageGpa: 8.42,
     healthStatus: 'Good',
-    representative: 'Rohan Deshmukh',
-    nextSessionTime: 'Tomorrow, 09:00 AM (Deep Learning Lab)'
+    representative: 'Suresh Gowda',
+    nextSessionTime: 'Tomorrow, 10:00 AM (PACS National ERP Lab)'
   },
   {
-    id: 'batch_ece_ds',
-    name: 'ECE Data Structures & Algorithms (Sem 4)',
-    code: 'BTECH-ECE-2023-B',
-    department: 'Electronics & Communication',
-    semester: 4,
-    totalStudents: 82,
-    averageAttendance: 76.8,
-    averageGpa: 7.34,
-    healthStatus: 'Attention Needed',
-    representative: 'Priya Nambiar',
-    nextSessionTime: 'Thursday, 11:00 AM (Trees & Heaps Lecture)'
+    id: 'batch_dairy_coop',
+    name: 'Dairy Cooperative Supervisors Certification',
+    code: 'NCCT-NDDB-DAIRY-04',
+    department: 'Dairy Cooperative Management Studies',
+    semester: 1,
+    totalStudents: 38,
+    averageAttendance: 88.0,
+    averageGpa: 7.95,
+    healthStatus: 'Good',
+    representative: 'Anand Shinde',
+    nextSessionTime: 'Wednesday, 09:30 AM (Cold Chain Logistics)'
   }
 ];
 
 export const mockTeacherStudents: StudentRecord[] = [
   {
-    id: 'std_1092',
-    name: 'Ananya Sharma',
-    rollNumber: '21CS8042',
-    email: 'ananya.s@colearn.edu.in',
+    id: 'ncct_trainee_2026_84',
+    name: 'Rajesh Kumar Patel',
+    rollNumber: 'RICM-2026-HDCM-042',
+    email: 'rajesh.patel@ncct.gov.in',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
-    batch: 'CSE-A (Semester 6)',
-    attendancePercentage: 96.4,
-    cgpa: 8.94,
+    batch: 'HDCM Batch 2025-2026',
+    attendancePercentage: 96.8,
+    cgpa: 8.92,
     aiRiskLevel: 'Low',
     riskFactors: [],
     lastActive: '10 mins ago',
-    completedAssignments: 14,
-    totalAssignments: 14
+    completedAssignments: 18,
+    totalAssignments: 18
   },
   {
-    id: 'std_1044',
-    name: 'Rohan Deshmukh',
-    rollNumber: '21CS8019',
-    email: 'rohan.d@colearn.edu.in',
+    id: 'ncct_std_09',
+    name: 'Suresh Gowda',
+    rollNumber: 'RICM-2026-HDCM-019',
+    email: 'suresh.g@ncct.gov.in',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
-    batch: 'CSE-A (Semester 6)',
-    attendancePercentage: 88.2,
-    cgpa: 8.12,
-    aiRiskLevel: 'Low',
-    riskFactors: [],
-    lastActive: '1 hour ago',
-    completedAssignments: 13,
-    totalAssignments: 14
-  },
-  {
-    id: 'std_1081',
-    name: 'Vikramaditya Rao',
-    rollNumber: '21CS8058',
-    email: 'vikram.r@colearn.edu.in',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
-    batch: 'CSE-A (Semester 6)',
-    attendancePercentage: 71.4,
-    cgpa: 6.82,
+    batch: 'HDCM Batch 2025-2026',
+    attendancePercentage: 73.4,
+    cgpa: 6.84,
     aiRiskLevel: 'High',
-    riskFactors: ['Attendance below 75%', 'Failed Quiz 3 (Attention Matrices)', 'Incomplete Lab 5'],
+    riskFactors: ['Attendance below 75%', 'Failed Quiz on PACS Double-Entry', 'Late Field Attachment Report'],
     lastActive: '3 days ago',
-    completedAssignments: 8,
-    totalAssignments: 14
-  },
-  {
-    id: 'std_1052',
-    name: 'Pooja Hegde',
-    rollNumber: '21CS8027',
-    email: 'pooja.h@colearn.edu.in',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
-    batch: 'CSE-A (Semester 6)',
-    attendancePercentage: 79.5,
-    cgpa: 7.45,
-    aiRiskLevel: 'Moderate',
-    riskFactors: ['Struggling with Dynamic Programming concepts', '1 late assignment submission'],
-    lastActive: '5 hours ago',
     completedAssignments: 12,
-    totalAssignments: 14
+    totalAssignments: 18
   },
   {
-    id: 'std_1067',
-    name: 'Aditya Kulkarni',
-    rollNumber: '21CS8035',
-    email: 'aditya.k@colearn.edu.in',
-    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=100&auto=format&fit=crop&q=80',
-    batch: 'CSE-A (Semester 6)',
-    attendancePercentage: 94.0,
-    cgpa: 8.65,
-    aiRiskLevel: 'Low',
-    riskFactors: [],
-    lastActive: '25 mins ago',
-    completedAssignments: 14,
-    totalAssignments: 14
-  }
-];
-
-export const mockLearningGaps: LearningGapDiagnostic[] = [
-  {
-    id: 'gap_01',
-    subject: 'Deep Learning & Neural Networks',
-    batch: 'CSE-A (Semester 6)',
-    topic: 'Gradient Vanishing & Residual Connection Derivations',
-    difficultyRating: 'High',
-    strugglingStudentsCount: 26,
-    totalStudents: 64,
-    failureRatePercentage: 40.6,
-    recommendedRemedialAction: 'AI generated 15-minute visual walkthrough on backprop pathways with interactive computational graph demo.',
-    suggestedResources: [
-      'Interactive Residual Flow Simulator',
-      '5-Question Practice Diagnostic Drill',
-      'Supplementary Video by Dr. Rajesh Verma'
-    ],
-    status: 'flagged',
-    strugglingStudentList: [
-      { id: 'std_1081', name: 'Vikramaditya Rao', score: 38, avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80' },
-      { id: 'std_1052', name: 'Pooja Hegde', score: 52, avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&auto=format&fit=crop&q=80' }
-    ]
-  },
-  {
-    id: 'gap_02',
-    subject: 'Advanced Graph Algorithms',
-    batch: 'CSE-A (Semester 6)',
-    topic: 'Dinic Max-Flow Algorithm Level Graph & Dead Ends',
-    difficultyRating: 'High',
-    strugglingStudentsCount: 31,
-    totalStudents: 64,
-    failureRatePercentage: 48.4,
-    recommendedRemedialAction: 'Schedule a 30-min live tutorial & release auto-graded step-by-step trace assignment.',
-    suggestedResources: [
-      'Augmenting Path Step-by-Step Visualizer',
-      'Peer Collaboration Study Group Invitation'
-    ],
-    status: 'remedial-assigned',
-    strugglingStudentList: [
-      { id: 'std_1081', name: 'Vikramaditya Rao', score: 42, avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80' }
-    ]
-  },
-  {
-    id: 'gap_03',
-    subject: 'Data Structures & Algorithms',
-    batch: 'ECE-Data Structures (Sem 4)',
-    topic: 'AVL Tree Double Rotations (RL & LR Cases)',
-    difficultyRating: 'Medium',
-    strugglingStudentsCount: 38,
-    totalStudents: 82,
-    failureRatePercentage: 46.3,
-    recommendedRemedialAction: 'Push EdScroll micro-learning card and 3 interactive rotation quiz widgets.',
-    suggestedResources: [
-      'EdScroll Reel #482 (Tree Rotations Explained with Pendulum Analogy)',
-      'Mini Quiz with Instant Feedback'
-    ],
-    status: 'flagged',
-    strugglingStudentList: []
+    id: 'ncct_std_14',
+    name: 'Manjula Devi',
+    rollNumber: 'RICM-2026-HDCM-027',
+    email: 'manjula.d@ncct.gov.in',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80',
+    batch: 'HDCM Batch 2025-2026',
+    attendancePercentage: 88.5,
+    cgpa: 7.92,
+    aiRiskLevel: 'Moderate',
+    riskFactors: ['Needs practice on Dairy Somatic Cell Count testing'],
+    lastActive: '2 hours ago',
+    completedAssignments: 16,
+    totalAssignments: 18
   }
 ];
 
 export const mockTeacherAssessments: AssessmentItem[] = [
   {
     id: 'asm_01',
-    title: 'Mid-Term Exam: Neural Architectures & Optimization',
-    batch: 'CSE-A (Semester 6)',
-    subject: 'CS602 Deep Learning',
-    dueDate: 'Sept 04, 2026',
+    title: 'Mid-Term Exam: PACS Governance & National ERP Compliance',
+    batch: 'HDCM Batch 2025-2026',
+    subject: 'COOP-101 Cooperative Management',
+    dueDate: 'Sept 14, 2026',
     durationMinutes: 90,
     totalMarks: 100,
-    submissionsCount: 61,
-    totalStudents: 64,
-    averageScorePercentage: 78.4,
+    submissionsCount: 42,
+    totalStudents: 44,
+    averageScorePercentage: 84.6,
     status: 'grading'
   },
   {
     id: 'asm_02',
-    title: 'Lab Quiz 4: Dinic Flow & Bipartite Matching',
-    batch: 'CSE-A (Semester 6)',
-    subject: 'CS601 Graph Algorithms',
-    dueDate: 'Sept 10, 2026',
-    durationMinutes: 45,
-    totalMarks: 40,
+    title: 'Practical Lab: Gerber Milk Fat Testing & Lactometer SNF Calculation',
+    batch: 'HDCM Batch 2025-2026',
+    subject: 'DAIRY-402 Milk Quality Testing',
+    dueDate: 'Sept 20, 2026',
+    durationMinutes: 60,
+    totalMarks: 50,
     submissionsCount: 0,
-    totalStudents: 64,
+    totalStudents: 44,
     averageScorePercentage: 0,
     status: 'scheduled'
   },
   {
     id: 'asm_03',
-    title: 'Coding Diagnostic: Raft Leader Election Implementation',
-    batch: 'AI-ML Honors Specialization',
-    subject: 'CS604 Distributed Systems',
-    dueDate: 'Aug 24, 2026',
-    durationMinutes: 120,
-    totalMarks: 50,
-    submissionsCount: 48,
-    totalStudents: 48,
-    averageScorePercentage: 86.2,
+    title: 'Diagnostic Test: KCC Scale of Finance & Prompt Repayment Rebate',
+    batch: 'PACS Secretaries Executive Program',
+    subject: 'FIN-203 Credit Management',
+    dueDate: 'Aug 28, 2026',
+    durationMinutes: 45,
+    totalMarks: 40,
+    submissionsCount: 52,
+    totalStudents: 52,
+    averageScorePercentage: 88.2,
     status: 'completed'
   }
 ];

@@ -24,14 +24,14 @@ export const LandingNavbar: React.FC<LandingNavbarProps> = ({ onNavigate }) => {
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xl font-extrabold tracking-tight text-slate-900 font-sans">
-                  Co<span className="text-brand-600">Learn</span>
+                  NCCT <span className="text-brand-600">CoLearn</span>
                 </span>
                 <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-brand-50 text-brand-700 border border-brand-200/60 uppercase tracking-wide">
-                  SIH 2026
+                  Govt. of India
                 </span>
               </div>
               <p className="text-[10px] text-slate-500 font-medium hidden sm:block -mt-0.5">
-                AI-Enabled Learning & Employment Ecosystem
+                National Council for Cooperative Training • Ministry of Cooperation
               </p>
             </div>
           </div>
