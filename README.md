@@ -139,3 +139,4 @@ All data fetching is decoupled into `src/services/api.ts` and custom hooks:
 - **LLM Streaming**: Connect `useAIAssistant` to OpenAI / Gemini / Ollama endpoints via WebSocket or Server-Sent Events.
 - **Attendance IoT**: Hook `TeacherAttendance` into campus biometric / RFID / QR gateway APIs.
 - **Skill Passport**: Connect `SkillPassport` to Polygon / Hyperledger / DigiLocker / ABC API for on-chain verifiable credential hashes.
+# colearn
